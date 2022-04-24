@@ -1,0 +1,13 @@
+name: UwUCore
+version: '${project.version}'
+main: me.aroze.uwucore.UwUCore
+api-version: 1.18
+authors: [ Aroze ]
+description: A simple set of core commands for your Minecraft server!
+commands:
+  heal:
+    permission: uwucore.heal
+  broadcast:
+    permission: uwucore.broadcast
+  console:
+    permission: uwucore.console
