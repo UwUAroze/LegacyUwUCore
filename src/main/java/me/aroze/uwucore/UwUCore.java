@@ -7,6 +7,11 @@ public final class UwUCore extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
+        getCommand("config").setExecutor(new ConfigCommand(this));
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("console").setExecutor(new ConsoleCommand());
