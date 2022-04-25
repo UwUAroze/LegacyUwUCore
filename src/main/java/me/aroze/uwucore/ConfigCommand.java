@@ -68,7 +68,9 @@ public class ConfigCommand implements CommandExecutor {
                         if (!main.getConfig().get(args[1]).getClass().getName().equals(newValue.getClass().getName()) && !(main.getConfig().get(args[1]) instanceof String) ) {
                             player.sendMessage(ChatUtils.color("&c&l⚠ &7You're attempting to change the object type!"));
                             return true;
-                        } else newValue = newValue.toString();
+                        } else if (main.getConfig().get(args[1]) instanceof String) {
+                            newValue = newValue.toString();
+                        }
 
 
 
