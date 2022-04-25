@@ -36,6 +36,7 @@ public class ConfigCommand implements CommandExecutor {
                     for (String string : main.getConfig().getStringList("testStringList")) {
                         player.sendMessage(ChatUtils.color("    - " + string));
                     }
+                    player.sendMessage("");
 
                 }
 
