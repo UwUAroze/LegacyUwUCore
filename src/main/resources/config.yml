@@ -5,3 +5,7 @@ testStringList:
   - 'owo'
   - 'rawr'
   - 'meow'
+testTree:
+  testTree2:
+    testTree3:
+      test: 4
