@@ -8,7 +8,6 @@ public final class UwUCore extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
 
-        getConfig().options().copyDefaults();
         saveDefaultConfig();
 
         getCommand("config").setExecutor(new ConfigCommand(this));
