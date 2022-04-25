@@ -29,8 +29,8 @@ public class ConfigCommand implements CommandExecutor {
                     player.sendMessage(ChatUtils.color("  &7testWord: &f" + main.getConfig().getString("testWord")));
                     player.sendMessage(ChatUtils.color("  &7testNumber: &f" + main.getConfig().getInt("testNumber") + ""));
                     if (main.getConfig().getBoolean("testBoolean")) {
-                        player.sendMessage(ChatUtils.color("  &7testBoolean: &aEnabled"));
-                    } else {player.sendMessage(ChatUtils.color("  &7testBoolean: &cDisabled"));}
+                        player.sendMessage(ChatUtils.color("  &7testBoolean: &atrue"));
+                    } else {player.sendMessage(ChatUtils.color("  &7testBoolean: &cfalse"));}
 
                     player.sendMessage(ChatUtils.color("\n  &7testStringList:"));
                     for (String string : main.getConfig().getStringList("testStringList")) {
