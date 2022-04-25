@@ -11,3 +11,4 @@ commands:
     permission: uwucore.broadcast
   console:
     permission: uwucore.console
+  config: {}
