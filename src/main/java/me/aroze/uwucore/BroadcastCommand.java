@@ -12,7 +12,7 @@ public class BroadcastCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
     //    String message = String.join(" ", args);
-        String[] lines = String.join(" ", args).split("\\n");
+        String[] lines = String.join(" ", args).split("\\\\n");
 
         Bukkit.broadcastMessage(ChatUtils.color("\n&#ffb5cf • &lAnnouncement &#ffb5cf•\n"));
         for (String line : lines) {
