@@ -11,6 +11,11 @@ public class BroadcastCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if (!sender.hasPermission("uwucore.broadcast")) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
+            return true;
+        }
+
     //    String message = String.join(" ", args);
         String[] lines = String.join(" ", args).split("\\\\n");
 
