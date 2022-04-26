@@ -11,10 +11,16 @@ public class ConsoleCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        String fullCommand = String.join(" ", args);
+        if (args.length >= 1) {
 
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), fullCommand);
-        sender.sendMessage(ChatUtils.color("&a✔ &2&l| &aExecuted console command: &7/" + fullCommand));
+            String fullCommand = String.join(" ", args);
+
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), fullCommand);
+            sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Executed console command: &#eb9bb7/" + fullCommand));
+            return true;
+        }
+
+        sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou must specify a command to be executed."));
         return true;
 
     }
