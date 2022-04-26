@@ -12,13 +12,13 @@ public class BroadcastCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
     //    String message = String.join(" ", args);
-        String[] lines = String.join(" ", args).split(",");
+        String[] lines = String.join(" ", args).split("\\n");
 
-        Bukkit.broadcastMessage(ChatUtils.color("\n&e&lAnnouncement"));
+        Bukkit.broadcastMessage(ChatUtils.color("\n&#ffb5cf • &lAnnouncement &#ffb5cf•\n"));
         for (String line : lines) {
-            Bukkit.broadcastMessage(ChatUtils.color("&8>> &7&o" + line));
+            Bukkit.broadcastMessage(ChatUtils.color("  &#ffd4e3&o" + line));
         }
-        Bukkit.broadcastMessage(ChatUtils.color("\n&c - " + sender.getName() ));
+        Bukkit.broadcastMessage(ChatUtils.color("\n&#ffb5cf - " + sender.getName() + "\n"));
 
         return true;
     }
