@@ -7,6 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class ConfigCommand implements CommandExecutor {
 
     private UwUCore main;
@@ -46,6 +49,14 @@ public class ConfigCommand implements CommandExecutor {
             if (args.length == 3) {
 
                 if (args[0].equalsIgnoreCase("set")) {
+
+                    if (!main.getConfig().getStringList(args[1]).isEmpty()) {
+                        String[] listItems = args[2].split(",");
+                        main.getConfig().set(args[1] ,listItems);
+                        main.saveConfig();
+                        player.sendMessage(ChatUtils.color("&a✔ &7Set &a" + args[1] + " &7to\n&a • " + String.join("\n • ", listItems)));
+                        return true;
+                    }
 
                     if (main.getConfig().contains(args[1])) {
 
