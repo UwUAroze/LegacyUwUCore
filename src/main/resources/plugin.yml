@@ -6,6 +6,7 @@ authors: [ Aroze ]
 description: A simple set of core commands for your Minecraft server!
 commands:
   heal: {}
-  broadcast: {}
+  broadcast:
+    aliases: [ bc, announce ]
   console: {}
   config: {}
