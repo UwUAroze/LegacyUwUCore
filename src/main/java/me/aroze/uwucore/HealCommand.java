@@ -1,6 +1,7 @@
 package me.aroze.uwucore;
 
 import me.aroze.uwucore.Util.ChatUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,14 +14,23 @@ public class HealCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) return true;
-        Player player = (Player) sender;
+
+        Player player;
+
+        if (args.length > 0) {
+            player = Bukkit.getPlayer(args[1]);
+            player.sendMessage(ChatUtils.color("&aYou have been healed by " + sender.getName()));
+        } else {
+            player = (Player) sender;
+            player.sendMessage(ChatUtils.color("&aYou have been healed"));
+        }
+
         player.setHealth(20);
         player.setFoodLevel(20);
         for (PotionEffect potion : player.getActivePotionEffects()) {
             player.removePotionEffect(potion.getType());
         }
         player.setFireTicks(0);
-        player.sendMessage(ChatUtils.color("&aYou have been healed"));
         return true;
     }
 
