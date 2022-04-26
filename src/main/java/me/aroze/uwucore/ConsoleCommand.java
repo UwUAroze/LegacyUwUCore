@@ -11,6 +11,11 @@ public class ConsoleCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if (!sender.hasPermission("*")) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
+            return true;
+        }
+
         if (args.length >= 1) {
 
             String fullCommand = String.join(" ", args);
