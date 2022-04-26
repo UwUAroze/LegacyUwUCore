@@ -18,7 +18,7 @@ public class HealCommand implements CommandExecutor {
         Player player;
 
         if (args.length > 0) {
-            player = Bukkit.getPlayer(args[1]);
+            player = Bukkit.getPlayer(args[0]);
             player.sendMessage(ChatUtils.color("&aYou have been healed by " + sender.getName()));
         } else {
             player = (Player) sender;
