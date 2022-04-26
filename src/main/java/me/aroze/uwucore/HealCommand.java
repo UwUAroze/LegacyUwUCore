@@ -20,16 +20,16 @@ public class HealCommand implements CommandExecutor {
         if (args.length > 0) {
             try {
                 player = Bukkit.getPlayer(args[0]);
-                player.sendMessage(ChatUtils.color("&aYou have been healed by " + sender.getName()));
-                sender.sendMessage(ChatUtils.color("&aYou have healed " + player.getName()));
+                sender.sendMessage(ChatUtils.color("&#ffd4e3You have healed &#eb9bb7" + player.getName()));
+                player.sendMessage(ChatUtils.color("&aYou have been healed by &#eb9bb7" + sender.getName()));
             } catch (NullPointerException e) {
-                sender.sendMessage(ChatUtils.color("&cThere is no player named " + args[0]));
+                sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6e There is no player named &#ff6e6e" + args[0]));
                 return true;
             }
 
         } else {
             player = (Player) sender;
-            player.sendMessage(ChatUtils.color("&aYou have been healed"));
+            player.sendMessage(ChatUtils.color("&#ffd4e3You have been healed"));
         }
 
         player.setHealth(20);
