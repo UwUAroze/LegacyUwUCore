@@ -1,10 +1,12 @@
 package me.aroze.uwucore;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import me.aroze.uwucore.Util.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -30,16 +32,27 @@ public class ConfigCommand implements CommandExecutor {
                 if (args[0].equals("info")) {
 
                     player.sendMessage(ChatUtils.color("\n&e&lConfig:\n"));
-                    player.sendMessage(ChatUtils.color("  &7testWord: &f" + main.getConfig().getString("testWord")));
-                    player.sendMessage(ChatUtils.color("  &7testNumber: &f" + main.getConfig().getInt("testNumber") + ""));
-                    if (!main.getConfig().getBoolean("testBoolean")) {
-                        player.sendMessage(ChatUtils.color("  &7testBoolean: &cfalse"));
-                    } else {player.sendMessage(ChatUtils.color("  &7testBoolean: &atrue"));}
-
-                    player.sendMessage(ChatUtils.color("\n  &7testStringList:"));
-                    for (String string : main.getConfig().getStringList("testStringList")) {
-                        player.sendMessage(ChatUtils.color("    - " + string));
+                    for (String key : main.getConfig().getConfigurationSection("").getKeys(true)) {
+                        if (!(main.getConfig().get(key) instanceof MemorySection)) {
+                            if (main.getConfig().getString(key).equals("true") || main.getConfig().getString(key).equals("false")) {
+                                player.sendMessage(ChatUtils.color("  &7" + key + ": " + (Boolean.parseBoolean(main.getConfig().getString(key)) ? "&atrue" : "&cfalse")));
+                            } else {
+                                player.sendMessage(ChatUtils.color("  &7" + key + ": &f" + main.getConfig().get(key)));
+                            }
+                        }
                     }
+
+//                    player.sendMessage(ChatUtils.color("\n&e&lConfig:\n"));
+//                    player.sendMessage(ChatUtils.color("  &7testWord: &f" + main.getConfig().getString("testWord")));
+//                    player.sendMessage(ChatUtils.color("  &7testNumber: &f" + main.getConfig().getInt("testNumber") + ""));
+//                    if (!main.getConfig().getBoolean("testBoolean")) {
+//                        player.sendMessage(ChatUtils.color("  &7testBoolean: &cfalse"));
+//                    } else {player.sendMessage(ChatUtils.color("  &7testBoolean: &atrue"));}
+//
+//                    player.sendMessage(ChatUtils.color("\n  &7testStringList:"));
+//                    for (String string : main.getConfig().getStringList("testStringList")) {
+//                        player.sendMessage(ChatUtils.color("    - " + string));
+//                    }
                     player.sendMessage("");
 
                 }
