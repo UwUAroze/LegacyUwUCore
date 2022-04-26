@@ -9,6 +9,5 @@ commands:
     permission: uwucore.heal
   broadcast:
     permission: uwucore.broadcast
-  console:
-    permission: uwucore.console
+  console: {}
   config: {}
