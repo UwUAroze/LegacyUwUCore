@@ -10,3 +10,4 @@ commands:
     aliases: [ bc, announce ]
   console: {}
   config: {}
+  test: {}
