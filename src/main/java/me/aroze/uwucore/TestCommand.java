@@ -7,10 +7,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.entity.CreatureSpawnEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.util.Vector;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -37,11 +33,6 @@ public class TestCommand implements CommandExecutor {
 
 
         return true;
-    }
-
-    @EventHandler
-    public void kbGoBrrrr(EntityDamageEvent e) {
-        e.getEntity().setVelocity(new Vector(1.5,1.5,1.5));
     }
 
 }
