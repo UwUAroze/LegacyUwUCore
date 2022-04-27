@@ -14,10 +14,16 @@ public final class UwUCore extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("console").setExecutor(new ConsoleCommand());
+        getCommand("test").setExecutor(new TestCommand());
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
     }
+
+    public static UwUCore getInstance() {
+        return getPlugin(UwUCore.class);
+    }
+
 }
