@@ -1,16 +1,11 @@
 package me.aroze.uwucore;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import me.aroze.uwucore.Util.ChatUtils;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.Player;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ConfigCommand implements CommandExecutor {
 
