@@ -5,7 +5,8 @@ testStringList:
   - 'owo'
   - 'rawr'
   - 'meow'
+attackSpeed: 4
+noDamageTicks: 10
 Knockback:
-  X: 1.0
+  XZ: 1.0
   Y: 1.0
-  Z: 1.0
