@@ -27,6 +27,11 @@ public class Knockback implements Listener {
         vel.setY(vel.getY() * UwUCore.getInstance().getConfig().getDouble("Knockback.Y"));
         vel.setZ(vel.getZ() * UwUCore.getInstance().getConfig().getDouble("Knockback.XZ"));
 
+        if (!e.getPlayer().isOnGround()) {
+            vel.setX(vel.getX() * UwUCore.getInstance().getConfig().getDouble("Knockback.AirXZ"));
+            vel.setZ(vel.getZ() * UwUCore.getInstance().getConfig().getDouble("Knockback.AirXZ"));
+        }
+
         e.setVelocity(vel);
 
 
