@@ -10,3 +10,4 @@ noDamageTicks: 10
 Knockback:
   XZ: 1.0
   Y: 1.0
+  AirXZ: 1.0
