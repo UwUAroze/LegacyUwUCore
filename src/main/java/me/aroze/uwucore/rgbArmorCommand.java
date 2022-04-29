@@ -19,6 +19,7 @@ public class rgbArmorCommand implements CommandExecutor {
             return true;
         } if (args.length < 3) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need 3 arguments!"));
+            return true;
         }
 
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
