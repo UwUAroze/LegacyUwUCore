@@ -40,23 +40,23 @@ public class rgbArmorCommand implements CommandExecutor {
                 return true;
             }
 
-            String hex = String.format("#%02x%02x%02x", red, green, blue);
-
             helmetMeta.setColor(Color.fromRGB(red, green, blue));
             chestMeta.setColor(Color.fromRGB(red, green, blue));
             legsMeta.setColor(Color.fromRGB(red, green, blue));
             bootsMeta.setColor(Color.fromRGB(red, green, blue));
+
             helmet.setItemMeta(helmetMeta);
             chestplate.setItemMeta(chestMeta);
             leggings.setItemMeta(legsMeta);
             boots.setItemMeta(bootsMeta);
 
             ((Player) sender).getInventory().addItem(helmet, chestplate, leggings, boots);
+            String hex = String.format("#%02x%02x%02x", red, green, blue);
             sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Created set of leather armor with rgb values: &" + hex + red + ", " + green + ", " + blue));
 
 
         } catch (NumberFormatException e) {
-            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eUse RGB values, so: /rgbArmor [Red (0-255)] [Green (0-255)] [Blue (0-255)]"));
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eSmh silly. Use RGB values, so:\n/rgbarmour [0-255] [0-255] [0-255]"));
             return true;
         }
 
