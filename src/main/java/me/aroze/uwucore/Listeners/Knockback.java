@@ -1,7 +1,7 @@
 package me.aroze.uwucore.Listeners;
 
 import me.aroze.uwucore.Util.ChatUtils;
-import me.aroze.uwucore.Commands.UwUCore;
+import me.aroze.uwucore.UwUCore;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.LivingEntity;

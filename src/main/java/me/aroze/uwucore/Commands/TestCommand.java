@@ -1,5 +1,6 @@
 package me.aroze.uwucore.Commands;
 
+import me.aroze.uwucore.UwUCore;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
