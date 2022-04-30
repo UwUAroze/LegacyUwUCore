@@ -39,6 +39,9 @@ public class rgbArmorCommand implements CommandExecutor {
                 sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou can only have RGB values between 0 and 255!"));
                 return true;
             }
+
+            String hex = String.format("#%02x%02x%02x", red, green, blue);
+
             helmetMeta.setColor(Color.fromRGB(red, green, blue));
             chestMeta.setColor(Color.fromRGB(red, green, blue));
             legsMeta.setColor(Color.fromRGB(red, green, blue));
@@ -49,6 +52,7 @@ public class rgbArmorCommand implements CommandExecutor {
             boots.setItemMeta(bootsMeta);
 
             ((Player) sender).getInventory().addItem(helmet, chestplate, leggings, boots);
+            sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Created set of leather armor with rgb values: &" + hex + red + ", " + green + ", " + blue));
 
 
         } catch (NumberFormatException e) {
