@@ -1,16 +1,14 @@
 package me.aroze.uwucore.Listeners;
 
 import me.aroze.uwucore.Util.ChatUtils;
-import me.aroze.uwucore.UwUCore;
+import me.aroze.uwucore.Commands.UwUCore;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerVelocityEvent;
 import org.bukkit.util.Vector;
 

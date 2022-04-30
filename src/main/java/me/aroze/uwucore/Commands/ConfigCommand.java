@@ -1,4 +1,4 @@
-package me.aroze.uwucore;
+package me.aroze.uwucore.Commands;
 
 import me.aroze.uwucore.Util.ChatUtils;
 import org.bukkit.command.Command;
