@@ -31,8 +31,8 @@ public class rgbArmorCommand implements CommandExecutor {
 
         if (args.length == 0) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need to provide hex or rgb values!"));
-            sender.sendMessage(ChatUtils.color("&#ff6e6eExample: &#ff7f6e/colouredArmor 243 215 236"));
-            sender.sendMessage(ChatUtils.color("&#ff6e6eExample: &#ff7f6e/colouredArmor #91ffc1"));
+            sender.sendMessage(ChatUtils.color("&#ff6e6e • Example: &#ff7f6e/colouredArmor 243 215 236"));
+            sender.sendMessage(ChatUtils.color("&#ff6e6e • Example: &#ff7f6e/colouredArmor #91ffc1"));
             return true;
         }
 
@@ -49,7 +49,7 @@ public class rgbArmorCommand implements CommandExecutor {
                     sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou only need 3 arguments for rgb, or one for hex!"));
                     return true;
                 } if (args.length < 3) {
-                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need at least 3 arguments for rgb, or just one for hex!"));
+                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need 3 arguments for rgb, or just one for hex!"));
                     return true;
                 }
             }
