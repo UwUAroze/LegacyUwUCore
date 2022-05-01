@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.Color;
 
-public class rgbArmorCommand implements CommandExecutor {
+public class colouredArmorCommand implements CommandExecutor {
 
     @SuppressWarnings("ConstantConditions")
     @Override
