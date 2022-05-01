@@ -24,7 +24,7 @@ public class JoinQuit implements Listener {
 
                 ChatUtils.color("\n" +
                         "&#eb9bb7Discord &8&l| &#ffb5cfdiscord.gg/abcd\n" +
-                        "&#a16a7dWebstore &8&l| &#ffb5cf/buy\n" +
+                        "&#a16a7dWebstore &8&l| &#ffb5cfummmmmm\n" +
                         "\n" +
                         "&#eb9bb7▶&8&m                                                  &#eb9bb7◀")
         );
