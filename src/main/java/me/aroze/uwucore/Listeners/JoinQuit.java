@@ -20,7 +20,7 @@ public class JoinQuit implements Listener {
         e.getPlayer().setPlayerListHeaderFooter(
                 ChatUtils.color("&#eb9bb7▶&8&m                                                  &#eb9bb7◀\n" +
                         "\n" +
-                        "&#ffb5cfWelcome to &#9c89c7Server name!\n" +
+                        "&#ffb5cfWelcome to &#9c89c7Server name&#ffb5cf!\n" +
                         "&#ffb5cfThere are &#ffe6ef" + Bukkit.getOnlinePlayers().size() + " &#ffb5cfonline players!\n"),
 
                 ChatUtils.color("\n" +
