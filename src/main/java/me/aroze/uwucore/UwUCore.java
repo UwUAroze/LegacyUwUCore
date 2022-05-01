@@ -1,6 +1,7 @@
 package me.aroze.uwucore;
 
 import me.aroze.uwucore.Commands.*;
+import me.aroze.uwucore.Listeners.JoinQuit;
 import me.aroze.uwucore.Listeners.Knockback;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +21,7 @@ public final class UwUCore extends JavaPlugin {
         getCommand("colouredarmor").setExecutor(new ColouredArmorCommand());
 
         getServer().getPluginManager().registerEvents(new Knockback(), this);
+        getServer().getPluginManager().registerEvents(new JoinQuit(), this);
     }
 
     @Override
