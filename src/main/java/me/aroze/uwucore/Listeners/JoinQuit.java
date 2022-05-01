@@ -16,6 +16,7 @@ public class JoinQuit implements Listener {
         e.setJoinMessage(ChatUtils.color("&#ffb5cf[&d+&#ffb5cf] " + e.getPlayer().getName()));
         e.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatUtils.color("&#ffd4e3Welcome back!!")));
         e.getPlayer().sendTitle(ChatUtils.color("&#ffb5cfWelcome back"), ChatUtils.color("&#ffd4e3Enjoy your stay <3"),30,75,15);
+        e.getPlayer().setPlayerListName(ChatUtils.color("&#ffe6ef" + e.getPlayer().getDisplayName()));
         e.getPlayer().setPlayerListHeaderFooter(
                 ChatUtils.color("&#eb9bb7▶&8&m                                                  &#eb9bb7◀\n" +
                         "\n" +
