@@ -16,6 +16,8 @@ public class rgbArmorCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        boolean providedHex = false;
+
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
@@ -27,20 +29,27 @@ public class rgbArmorCommand implements CommandExecutor {
 
         Color color = Color.WHITE;
 
+        if (args.length == 0) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need to provide hex or rgb values!"));
+            sender.sendMessage(ChatUtils.color("&#ff6e6eExample: &#ff7f6e/colouredArmor 243 215 236"));
+            sender.sendMessage(ChatUtils.color("&#ff6e6eExample: &#ff7f6e/colouredArmor #91ffc1"));
+            return true;
+        }
+
         if (args.length == 1) {
 
             if (args[0].matches("#[0-9A-Fa-f]{6}")) {
                 int r = Integer.valueOf(args[0].substring(1, 3), 16);
                 int g = Integer.valueOf(args[0].substring(3, 5), 16);
                 int b = Integer.valueOf(args[0].substring(5, 7), 16);
-
+                providedHex = true;
                 color = Color.fromRGB(r, g, b);
             } else {
                 if (args.length > 3) {
-                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou only need 3 arguments!"));
+                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou only need 3 arguments for rgb, or one for hex!"));
                     return true;
                 } if (args.length < 3) {
-                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need 3 arguments!"));
+                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need at least 3 arguments for rgb, or just one for hex!"));
                     return true;
                 }
             }
@@ -58,7 +67,7 @@ public class rgbArmorCommand implements CommandExecutor {
                 }
             }
         } catch (NumberFormatException e) {
-            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eSmh silly. Use RGB values, so:\n/rgbarmour [0-255] [0-255] [0-255]"));
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eSmh silly. Use RGB values, so:\n/colouredArmor [0-255] [0-255] [0-255]"));
             return true;
         }
 
@@ -74,10 +83,12 @@ public class rgbArmorCommand implements CommandExecutor {
 
         ((Player) sender).getInventory().addItem(helmet, chestplate, leggings, boots);
         String toHex = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
-        sender.sendMessage(ChatUtils.color(
-            "&#eb9bb7✔ &#ffd4e3Created set of leather armor with rgb values: &" + toHex + color.getRed() + ", " + color.getGreen() + ", " + color.getBlue()
-        ));
 
+        if (providedHex) {
+            sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Created set of leather armor with hex value: &" + toHex + toHex));
+        } else {
+            sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Created set of leather armor with rgb values: &" + toHex + color.getRed() + ", " + color.getGreen() + ", " + color.getBlue()));
+        }
         return true;
 
     }
