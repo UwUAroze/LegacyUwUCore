@@ -10,13 +10,13 @@ public class JoinQuit implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        e.setJoinMessage("&#ffb5cf[&d+&#ffb5cf] " + e.getPlayer().getName());
+        e.setJoinMessage(ChatUtils.color("&#ffb5cf[&d+&#ffb5cf] " + e.getPlayer().getName()));
         e.getPlayer().sendTitle(ChatUtils.color("&#ffb5cfWelcome back"), ChatUtils.color("&#ffd4e3Enjoy your stay <3"),30,75,15);
     }
 
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
-        e.setQuitMessage("&#ffb5cf[&d-&#ffb5cf] " + e.getPlayer().getName());
+        e.setQuitMessage(ChatUtils.color("&#ffb5cf[&d-&#ffb5cf] " + e.getPlayer().getName()));
     }
 
 }
