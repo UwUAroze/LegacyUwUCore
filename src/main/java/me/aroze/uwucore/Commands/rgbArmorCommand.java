@@ -12,6 +12,7 @@ import org.bukkit.Color;
 
 public class rgbArmorCommand implements CommandExecutor {
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
