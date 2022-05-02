@@ -11,6 +11,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class JoinQuit implements Listener {
 
@@ -26,6 +28,7 @@ public class JoinQuit implements Listener {
         e.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatUtils.color("&#ffd4e3Welcome back!!")));
         e.getPlayer().sendTitle(ChatUtils.color("&#ffb5cfWelcome back"), ChatUtils.color("&#ffd4e3Enjoy your stay <3"),30,75,15);
         e.getPlayer().setPlayerListName(ChatUtils.color("&#ffe6ef" + e.getPlayer().getDisplayName()));
+        e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 75, 1));
 
         bossBar.addPlayer(e.getPlayer());
 
