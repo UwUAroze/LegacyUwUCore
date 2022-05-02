@@ -1,6 +1,6 @@
-package me.aroze.uwucore.Listeners;
+package me.aroze.uwucore.listeners;
 
-import me.aroze.uwucore.Util.ChatUtils;
+import me.aroze.uwucore.util.ChatUtils;
 import me.aroze.uwucore.UwUCore;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;

@@ -1,4 +1,4 @@
-package me.aroze.uwucore.Util;
+package me.aroze.uwucore.util;
 
 import net.md_5.bungee.api.ChatColor;
 

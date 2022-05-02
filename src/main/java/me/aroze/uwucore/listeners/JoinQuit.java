@@ -1,6 +1,6 @@
-package me.aroze.uwucore.Listeners;
+package me.aroze.uwucore.listeners;
 
-import me.aroze.uwucore.Util.ChatUtils;
+import me.aroze.uwucore.util.ChatUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
