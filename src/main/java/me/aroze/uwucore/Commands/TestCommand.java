@@ -1,5 +1,6 @@
 package me.aroze.uwucore.Commands;
 
+import me.aroze.uwucore.Util.ChatUtils;
 import me.aroze.uwucore.UwUCore;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
@@ -24,7 +25,10 @@ public class TestCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if (!sender.hasPermission("*")) return true;
+        if (!sender.hasPermission("*")) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
+            return true;
+        };
 
         if (args[0].equals("stand")) {
             ArmorStand stand = (ArmorStand) Bukkit.getWorld("flat").spawnEntity(new Location(Bukkit.getWorld("flat"), 0, -60, 0), EntityType.ARMOR_STAND);
