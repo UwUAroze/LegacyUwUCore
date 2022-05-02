@@ -16,6 +16,11 @@ public class ColouredArmorCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if (!sender.hasPermission("uwucore.armour")) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
+            return true;
+        }
+
         boolean providedHex = false;
 
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
