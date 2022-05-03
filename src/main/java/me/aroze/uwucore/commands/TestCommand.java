@@ -60,10 +60,15 @@ public class TestCommand implements CommandExecutor {
 
         if (args[0].equals("potion")) {
             ((Player) sender).addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 600, 1));
-            ((Player) sender).addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 600, 1, true, true, false));
+            ((Player) sender).addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100000, 1, true, true, false));
             return true;
         }
 
+        if (args[0].equals("milk")) {
+            for (PotionEffect effect : ((Player) sender).getActivePotionEffects() ) {
+                ((Player) sender).removePotionEffect(effect.getType());
+            }
+        }
 
         return true;
     }
