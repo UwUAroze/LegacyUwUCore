@@ -14,6 +14,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -53,6 +55,13 @@ public class TestCommand implements CommandExecutor {
             meta.addEffect(FireworkEffect.builder().withColor(Color.YELLOW).withColor(Color.FUCHSIA).with(FireworkEffect.Type.CREEPER).withFade(Color.AQUA).build());
             meta.setPower(1);
             firework.setFireworkMeta(meta);
+            return true;
+        }
+
+        if (args[0].equals("potion")) {
+            ((Player) sender).addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 600, 1));
+            ((Player) sender).addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 600, 1, true, true, false));
+            return true;
         }
 
 
