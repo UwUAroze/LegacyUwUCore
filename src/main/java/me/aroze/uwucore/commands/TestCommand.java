@@ -17,6 +17,8 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestCommand implements CommandExecutor {
@@ -69,6 +71,21 @@ public class TestCommand implements CommandExecutor {
                 ((Player) sender).removePotionEffect(effect.getType());
             }
         }
+
+        if (args[0].equals("gradient")) {
+            ArrayList<String> text = new ArrayList<>(Arrays.asList(args));
+            Bukkit.broadcastMessage(ChatUtils.gradient(
+                    Integer.parseInt(args[1]),
+                    Integer.parseInt(args[2]),
+                    Integer.parseInt(args[3]),
+                    Integer.parseInt(args[4]),
+                    Integer.parseInt(args[5]),
+                    Integer.parseInt(args[6]),
+                    String.join(" ", text.subList(7, text.size()))
+            ));
+        }
+
+
 
         return true;
     }

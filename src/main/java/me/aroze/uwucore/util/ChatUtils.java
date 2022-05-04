@@ -1,6 +1,7 @@
 package me.aroze.uwucore.util;
 
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Color;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,6 +18,29 @@ public class ChatUtils {
             match = hexPattern.matcher(text);
         }
         return ChatColor.translateAlternateColorCodes('&', text);
+    }
+
+    public static String gradient(int red1,int green1,int blue1, int red2,int green2,int blue2, String text) {
+
+        String[] textSplit = text.split("");
+
+        String newText = "";
+        String colour = "";
+
+        int stepRed = (red2 - red1) / text.length();
+        int stepGreen = (green2 - green1) / text.length();
+        int stepBlue = (blue2 - blue1) / text.length();
+
+        for (int i=0; i<text.length(); i++) {
+            red1 += stepRed;
+            green1 += stepGreen;
+            blue1 += stepBlue;
+
+            colour = String.format("#%02x%02x%02x", red1, green1, blue1);
+            newText += "&" + colour + textSplit[i];
+        }
+
+        return color(newText);
     }
 
 }
