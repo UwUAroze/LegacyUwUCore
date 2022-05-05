@@ -75,12 +75,12 @@ public class TestCommand implements CommandExecutor {
         if (args[0].equals("gradient")) {
             ArrayList<String> text = new ArrayList<>(Arrays.asList(args));
             Bukkit.broadcastMessage(ChatUtils.gradient(
-                    Double.parseDouble(args[1]),
-                    Double.parseDouble(args[2]),
-                    Double.parseDouble(args[3]),
-                    Double.parseDouble(args[4]),
-                    Double.parseDouble(args[5]),
-                    Double.parseDouble(args[6]),
+                    Integer.parseInt(args[1]),
+                    Integer.parseInt(args[2]),
+                    Integer.parseInt(args[3]),
+                    Integer.parseInt(args[4]),
+                    Integer.parseInt(args[5]),
+                    Integer.parseInt(args[6]),
                     String.join(" ", text.subList(7, text.size()))
             ));
         }
