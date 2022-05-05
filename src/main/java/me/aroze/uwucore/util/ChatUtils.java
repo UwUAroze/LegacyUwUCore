@@ -20,18 +20,31 @@ public class ChatUtils {
         return ChatColor.translateAlternateColorCodes('&', text);
     }
 
-    public static String gradient(double red1,double green1,double blue1, double red2,double green2,double blue2, String text) {
+    public static String gradient(int red1,int green1,int blue1, int red2,int green2,int blue2, String text) {
 
         String[] textSplit = text.split("");
 
         String newText = "";
         String colour = "";
-
-        double stepRed = (red2 - red1) / text.length();
-        double stepGreen = (green2 - green1) / text.length();
-        double stepBlue = (blue2 - blue1) / text.length();
+        int spaces = 0;
 
         for (int i=0; i<text.length(); i++) {
+            if (textSplit[i].equals(" ")) {
+                spaces ++;
+            }
+        }
+
+        double stepRed = (red2 - red1) / (text.length() - spaces);
+        double stepGreen = (green2 - green1) / (text.length() - spaces);
+        double stepBlue = (blue2 - blue1) / (text.length() - spaces);
+
+        for (int i=0; i<text.length(); i++) {
+
+            if (textSplit[i].equals(" ")) {
+                newText += " ";
+                continue;
+            }
+
             red1 += stepRed;
             green1 += stepGreen;
             blue1 += stepBlue;
