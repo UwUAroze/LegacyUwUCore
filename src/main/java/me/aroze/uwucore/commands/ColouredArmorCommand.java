@@ -70,6 +70,7 @@ public class ColouredArmorCommand implements CommandExecutor {
                     sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou can only have RGB values between 0 and 255!"));
                     return true;
                 }
+                color = Color.fromRGB(red,green,blue);
             }
         } catch (NumberFormatException e) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eSmh silly. Use RGB values, so:\n/colouredArmor [0-255] [0-255] [0-255]"));
