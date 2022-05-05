@@ -27,9 +27,9 @@ public class ChatUtils {
         String newText = "";
         String colour = "";
 
-        int stepRed = (red2 - red1) / text.length();
-        int stepGreen = (green2 - green1) / text.length();
-        int stepBlue = (blue2 - blue1) / text.length();
+        double stepRed = (red2 - red1) / text.length();
+        double stepGreen = (green2 - green1) / text.length();
+        double stepBlue = (blue2 - blue1) / text.length();
 
         for (int i=0; i<text.length(); i++) {
             red1 += stepRed;
