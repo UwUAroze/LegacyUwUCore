@@ -5,8 +5,8 @@ api-version: 1.18
 authors: [ Aroze ]
 description: A simple set of core commands for your Minecraft server!
 commands:
-  colouredArmor:
-    aliases: [ coloredarmor, coloredarmour, colouredarmour ]
+  colouredarmor:
+    aliases: [ coloredarmor, coloredarmour, colouredarmour, rgbarmor, rgbarmour ]
   broadcast:
     aliases: [ bc, announce ]
   heal: {}
