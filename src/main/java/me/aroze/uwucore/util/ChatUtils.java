@@ -20,7 +20,7 @@ public class ChatUtils {
         return ChatColor.translateAlternateColorCodes('&', text);
     }
 
-    public static String gradient(int red1,int green1,int blue1, int red2,int green2,int blue2, String text) {
+    public static String gradient(double red1,double green1,double blue1, double red2,double green2,double blue2, String text) {
 
         String[] textSplit = text.split("");
 
