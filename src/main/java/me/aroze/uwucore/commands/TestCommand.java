@@ -2,10 +2,7 @@ package me.aroze.uwucore.commands;
 
 import me.aroze.uwucore.util.ChatUtils;
 import me.aroze.uwucore.UwUCore;
-import org.bukkit.Bukkit;
-import org.bukkit.Color;
-import org.bukkit.FireworkEffect;
-import org.bukkit.Location;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -70,6 +67,7 @@ public class TestCommand implements CommandExecutor {
             for (PotionEffect effect : ((Player) sender).getActivePotionEffects() ) {
                 ((Player) sender).removePotionEffect(effect.getType());
             }
+            return true;
         }
 
         if (args[0].equals("gradient")) {
@@ -83,6 +81,11 @@ public class TestCommand implements CommandExecutor {
                     Integer.parseInt(args[6]),
                     String.join(" ", text.subList(7, text.size()))
             ));
+            return true;
+        }
+
+        if (args[0].equals("sound")) {
+            ((Player) sender).playSound(((Player) sender).getLocation(), Sound.BLOCK_HONEY_BLOCK_SLIDE, 1.0F, Float.parseFloat(args[1]));
         }
 
 
