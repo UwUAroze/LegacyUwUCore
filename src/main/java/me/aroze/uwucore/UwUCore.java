@@ -20,6 +20,7 @@ public final class UwUCore extends JavaPlugin {
         getCommand("console").setExecutor(new ConsoleCommand());
         getCommand("test").setExecutor(new TestCommand());
         getCommand("colouredarmor").setExecutor(new ColouredArmorCommand());
+        getCommand("kittygun").setExecutor(new KittyGunCommand());
 
         getServer().getPluginManager().registerEvents(new Knockback(), this);
         getServer().getPluginManager().registerEvents(new JoinQuit(), this);

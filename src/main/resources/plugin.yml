@@ -13,3 +13,4 @@ commands:
   console: {}
   config: {}
   test: {}
+  kittygun: {}
