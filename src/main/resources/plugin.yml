@@ -13,4 +13,5 @@ commands:
   console: {}
   config: {}
   test: {}
-  kittygun: {}
+  kittygun:
+    aliases: [ kittycannon, kittyshooter, catgun, catcannon, catshooter, kittengun, kittencannon, kittenshooter ]
