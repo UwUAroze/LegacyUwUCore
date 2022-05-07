@@ -1,6 +1,7 @@
 package me.aroze.uwucore;
 
 import me.aroze.uwucore.commands.*;
+import me.aroze.uwucore.listeners.Interact;
 import me.aroze.uwucore.listeners.JoinQuit;
 import me.aroze.uwucore.listeners.Knockback;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,6 +23,7 @@ public final class UwUCore extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new Knockback(), this);
         getServer().getPluginManager().registerEvents(new JoinQuit(), this);
+        getServer().getPluginManager().registerEvents(new Interact(), this);
     }
 
     @Override
