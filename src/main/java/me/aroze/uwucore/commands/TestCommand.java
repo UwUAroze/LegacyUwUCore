@@ -90,10 +90,12 @@ public class TestCommand implements CommandExecutor {
                 BarStyle.SOLID
             );
             bossBar.addPlayer((Player) sender);
+            return true;
         }
 
         if (args[0].equals("sound")) {
             ((Player) sender).playSound(((Player) sender).getLocation(), Sound.BLOCK_HONEY_BLOCK_SLIDE, 1.0F, Float.parseFloat(args[1]));
+            return true;
         }
 
 
