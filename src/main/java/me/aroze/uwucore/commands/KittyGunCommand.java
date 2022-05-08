@@ -1,5 +1,6 @@
 package me.aroze.uwucore.commands;
 
+import me.aroze.uwucore.UwUCore;
 import me.aroze.uwucore.util.ChatUtils;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -21,13 +22,7 @@ public class KittyGunCommand implements CommandExecutor {
         }
 
         if (!(sender instanceof Player)) return true;
-
-        ItemStack gun = new ItemStack(Material.END_ROD);
-        ItemMeta gunMeta = gun.getItemMeta();
-        gunMeta.setDisplayName(ChatUtils.color("&#b9ffb3Kitty Gun"));
-        gun.setItemMeta(gunMeta);
-        ((Player) sender).getInventory().addItem(gun);
-
+        ((Player) sender).getInventory().addItem(UwUCore.kittyGun);
         return true;
 
     }

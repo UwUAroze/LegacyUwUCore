@@ -4,9 +4,15 @@ import me.aroze.uwucore.commands.*;
 import me.aroze.uwucore.listeners.Interact;
 import me.aroze.uwucore.listeners.JoinQuit;
 import me.aroze.uwucore.listeners.Knockback;
+import me.aroze.uwucore.util.ChatUtils;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class UwUCore extends JavaPlugin {
+
+    public static ItemStack kittyGun = new ItemStack(Material.END_ROD);
 
     @Override
     public void onEnable() {
@@ -25,6 +31,10 @@ public final class UwUCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Knockback(), this);
         getServer().getPluginManager().registerEvents(new JoinQuit(), this);
         getServer().getPluginManager().registerEvents(new Interact(), this);
+
+        ItemMeta kittyGunMeta = kittyGun.getItemMeta();
+        kittyGunMeta.setDisplayName(ChatUtils.color("&#b9ffb3Kitty Gun"));
+        kittyGun.setItemMeta(kittyGunMeta);
     }
 
     @Override
