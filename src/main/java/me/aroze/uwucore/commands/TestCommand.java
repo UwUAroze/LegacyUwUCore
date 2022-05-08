@@ -98,6 +98,16 @@ public class TestCommand implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equals("particle")) {
+            if (args[1].equals("player")) {
+                ((Player) sender).spawnParticle(Particle.DRAGON_BREATH, ((Player) sender).getLocation(), 20);
+            }
+            if (args[1].equals("world")) {
+                ((Player) sender).getWorld().spawnParticle(Particle.WATER_BUBBLE, ((Player) sender).getLocation().add(0,2,0), 20);
+            }
+            return true;
+        }
+
 
 
         return true;
