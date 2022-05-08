@@ -16,12 +16,6 @@ import org.bukkit.potion.PotionEffectType;
 
 public class JoinQuit implements Listener {
 
-    BossBar bossBar = Bukkit.createBossBar(
-    "Daddy Santio!",
-    BarColor.PURPLE,
-    BarStyle.SOLID
-    );
-
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         e.setJoinMessage(ChatUtils.color("&#ffb5cf[&d+&#ffb5cf] " + e.getPlayer().getName()));
@@ -29,8 +23,6 @@ public class JoinQuit implements Listener {
         e.getPlayer().sendTitle(ChatUtils.color("&#ffb5cfWelcome back"), ChatUtils.color("&#ffd4e3Enjoy your stay <3"),30,75,15);
         e.getPlayer().setPlayerListName(ChatUtils.color("&#ffe6ef" + e.getPlayer().getDisplayName()));
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 75, 1));
-
-        bossBar.addPlayer(e.getPlayer());
 
         e.getPlayer().setPlayerListHeaderFooter(
                 ChatUtils.color("&#eb9bb7▶&8&m                                                  &#eb9bb7◀\n" +

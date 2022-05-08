@@ -3,13 +3,13 @@ package me.aroze.uwucore.commands;
 import me.aroze.uwucore.util.ChatUtils;
 import me.aroze.uwucore.UwUCore;
 import org.bukkit.*;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Firework;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -19,7 +19,6 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestCommand implements CommandExecutor {
-
     float yaw;
     float pitch;
 
@@ -82,6 +81,15 @@ public class TestCommand implements CommandExecutor {
                     String.join(" ", text.subList(7, text.size()))
             ));
             return true;
+        }
+
+        if (args[0].equals("bossbar")) {
+            BossBar bossBar = Bukkit.createBossBar(
+                args[1],
+                BarColor.PURPLE,
+                BarStyle.SOLID
+            );
+            bossBar.addPlayer((Player) sender);
         }
 
         if (args[0].equals("sound")) {
