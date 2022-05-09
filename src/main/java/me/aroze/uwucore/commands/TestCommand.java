@@ -111,7 +111,7 @@ public class TestCommand implements CommandExecutor {
             return true;
         }
 
-        if (args[0].equals("annoy")) {
+        if (args[0].equals("gamestate")) {
             PacketContainer packet = new PacketContainer(PacketType.Play.Server.GAME_STATE_CHANGE);
 
             if (args[2].equals("credits")) {
@@ -122,6 +122,11 @@ public class TestCommand implements CommandExecutor {
             if (args[2].equals("demo")) {
                 packet.getGameStateIDs().write(0, 5);
                 packet.getFloat().write(0, 0F);
+            }
+
+            if (args[2].equals("custom")) {
+                packet.getGameStateIDs().write(0, Integer.valueOf(args[3]));
+                packet.getFloat().write(0, Float.valueOf(args[4]));
             }
 
             try {
