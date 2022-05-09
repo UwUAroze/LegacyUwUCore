@@ -1,5 +1,7 @@
 package me.aroze.uwucore;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
 import me.aroze.uwucore.commands.*;
 import me.aroze.uwucore.listeners.Interact;
 import me.aroze.uwucore.listeners.JoinQuit;
@@ -9,9 +11,9 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-
 public final class UwUCore extends JavaPlugin {
 
+    public static ProtocolManager protocolManager;
     public static ItemStack kittyGun = new ItemStack(Material.END_ROD);
 
     @Override
@@ -35,6 +37,8 @@ public final class UwUCore extends JavaPlugin {
         ItemMeta kittyGunMeta = kittyGun.getItemMeta();
         kittyGunMeta.setDisplayName(ChatUtils.color("&#b9ffb3Kitty Gun"));
         kittyGun.setItemMeta(kittyGunMeta);
+
+        protocolManager = ProtocolLibrary.getProtocolManager();
     }
 
     @Override

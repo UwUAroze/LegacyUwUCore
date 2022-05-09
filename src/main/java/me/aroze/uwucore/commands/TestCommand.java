@@ -1,5 +1,7 @@
 package me.aroze.uwucore.commands;
 
+import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.PacketContainer;
 import me.aroze.uwucore.util.ChatUtils;
 import me.aroze.uwucore.UwUCore;
 import org.bukkit.*;
@@ -14,6 +16,7 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -108,7 +111,26 @@ public class TestCommand implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equals("annoy")) {
+            PacketContainer packet = new PacketContainer(PacketType.Play.Server.GAME_STATE_CHANGE);
 
+            if (args[2].equals("credits")) {
+                packet.getGameStateIDs().write(0, 4);
+                packet.getFloat().write(0, 1.0F);
+            }
+
+            if (args[2].equals("demo")) {
+                packet.getGameStateIDs().write(0, 5);
+                packet.getFloat().write(0, 0F);
+            }
+
+            try {
+                UwUCore.protocolManager.sendServerPacket(Bukkit.getPlayer(args[1]), packet);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(
+                        "Cannot send packet " + packet, e);
+            }
+        }
 
         return true;
     }
