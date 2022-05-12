@@ -135,6 +135,7 @@ public class TestCommand implements CommandExecutor {
                 throw new RuntimeException(
                         "Cannot send packet " + packet, e);
             }
+            return true;
         }
 
         return true;
