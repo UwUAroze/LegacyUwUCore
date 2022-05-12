@@ -5,6 +5,8 @@ import com.comphenix.protocol.events.PacketContainer;
 import me.aroze.uwucore.util.ChatUtils;
 import me.aroze.uwucore.UwUCore;
 import org.bukkit.*;
+import org.bukkit.block.banner.Pattern;
+import org.bukkit.block.banner.PatternType;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
@@ -12,6 +14,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BannerMeta;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -19,6 +23,7 @@ import org.bukkit.potion.PotionEffectType;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestCommand implements CommandExecutor {
@@ -136,6 +141,23 @@ public class TestCommand implements CommandExecutor {
                         "Cannot send packet " + packet, e);
             }
             return true;
+        }
+
+        if (args[0].equals("banner")) {
+            ItemStack banner = new ItemStack(Material.PINK_BANNER);
+            BannerMeta bannerMeta = (BannerMeta) banner.getItemMeta();
+
+            List<Pattern> patterns = new ArrayList<>();
+            patterns.add(new Pattern(DyeColor.BROWN, PatternType.RHOMBUS_MIDDLE));
+            patterns.add(new Pattern(DyeColor.WHITE, PatternType.STRIPE_MIDDLE));
+            patterns.add(new Pattern(DyeColor.PINK, PatternType.HALF_HORIZONTAL));
+            patterns.add(new Pattern(DyeColor.WHITE, PatternType.CIRCLE_MIDDLE));
+            patterns.add(new Pattern(DyeColor.PINK, PatternType.BORDER));
+
+            bannerMeta.setPatterns(patterns);
+            banner.setItemMeta(bannerMeta);
+
+            ((Player) sender).getInventory().addItem(banner);
         }
 
         return true;
