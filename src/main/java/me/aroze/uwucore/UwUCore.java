@@ -3,6 +3,7 @@ package me.aroze.uwucore;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import me.aroze.uwucore.commands.*;
+import me.aroze.uwucore.listeners.Chat;
 import me.aroze.uwucore.listeners.Interact;
 import me.aroze.uwucore.listeners.JoinQuit;
 import me.aroze.uwucore.listeners.Knockback;
@@ -31,6 +32,7 @@ public final class UwUCore extends JavaPlugin {
         getCommand("kittygun").setExecutor(new KittyGunCommand());
         getCommand("vanish").setExecutor(new VanishCommand());
 
+        getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new Knockback(), this);
         getServer().getPluginManager().registerEvents(new JoinQuit(), this);
         getServer().getPluginManager().registerEvents(new Interact(), this);
