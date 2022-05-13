@@ -158,6 +158,7 @@ public class TestCommand implements CommandExecutor {
             banner.setItemMeta(bannerMeta);
 
             ((Player) sender).getInventory().addItem(banner);
+            return true;
         }
 
         return true;
