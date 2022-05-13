@@ -169,13 +169,13 @@ public class TestCommand implements CommandExecutor {
             bookMeta.setTitle(ChatUtils.color("&ctest book!"));
             bookMeta.setAuthor(ChatUtils.color("&dSantio71"));
             bookMeta.addPage(ChatUtils.color((
-                    "&1Woah dark blue &2Woah green" +
-                    "\n&3Woah cyan &4Woah dark red" +
-                    "\n&5Woah purple &6Woah gold" +
-                    "\n&7Woah gray &8Woah dark gray" +
-                    "\n&9Woah blue &0Woah black" +
-                    "\n&aWoah lime &bWoah aqua" +
-                    "\n&cWoah red &dWoah pink"
+                    "&1dark blue &2green" +
+                    "\n&3cyan &4dark red" +
+                    "\n&5purple &6gold" +
+                    "\n&7gray &8dark gray" +
+                    "\n&9blue &0black" +
+                    "\n&alime &baqua" +
+                    "\n&cred &dpink"
                     )));
 
             book.setItemMeta(bookMeta);
