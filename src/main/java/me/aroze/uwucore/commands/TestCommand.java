@@ -16,6 +16,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BannerMeta;
+import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -159,6 +160,24 @@ public class TestCommand implements CommandExecutor {
 
             ((Player) sender).getInventory().addItem(banner);
             return true;
+        }
+
+        if (args[0].equals("book")) {
+            ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
+            BookMeta bookMeta = (BookMeta) book.getItemMeta();
+
+            bookMeta.setTitle(ChatUtils.color("&ctest book!"));
+            bookMeta.setAuthor(ChatUtils.color("&dSantio71"));
+            bookMeta.addPage(ChatUtils.color((
+                    "&1Woah dark blue &2Woah green" +
+                    "\n&3Woah cyan &4Woah dark red" +
+                    "\n&5Woah purple &6Woah gold" +
+                    "\n&7Woah gray &8Woah dark gray" +
+                    "\n&9Woah blue &0Woah black" +
+                    "\n&aWoah lime &bWoah aqua" +
+                    "\n&cWoah red &dWoah pink"
+                    )));
+
         }
 
         return true;
