@@ -178,6 +178,8 @@ public class TestCommand implements CommandExecutor {
                     "\n&cWoah red &dWoah pink"
                     )));
 
+            book.setItemMeta(bookMeta);
+            ((Player) sender).getInventory().addItem(book);
         }
 
         return true;
