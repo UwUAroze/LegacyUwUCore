@@ -183,6 +183,10 @@ public class TestCommand implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equals("playtime")) {
+            sender.sendMessage(String.valueOf(((Player) sender).getStatistic(Statistic.PLAY_ONE_MINUTE)));
+        }
+
         return true;
     }
 
