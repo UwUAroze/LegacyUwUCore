@@ -11,7 +11,7 @@ public class MathUtils {
         int hours = (ticks/20/60/60) % 24;
         int days = ticks/20/60/60 / 24;
 
-        return Math.floor(days) + " days, " + Math.floor(hours) + " hours, " + Math.floor(minutes) + " minutes, " + Math.floor(seconds) + " seconds";
+        return Integer.parseInt("" + Math.floor(days)) + " days, " + Integer.parseInt("" + Math.floor(hours)) + " hours, " + Integer.parseInt("" + Math.floor(minutes)) + " minutes, " + Integer.parseInt("" + Math.floor(seconds)) + " seconds";
     }
 
 }
