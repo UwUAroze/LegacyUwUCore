@@ -37,8 +37,14 @@ public class PunishCommand implements CommandExecutor {
                 break;
             case "ban":
                 Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThe ban hammer has spoken!\n\n&#ff6e6eThe ban hammer: " + sender.getName()), null, sender.getName());
+                target.kickPlayer(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou have been banned from the server"));
                 break;
             case "tempban":
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.HOUR,12);
+                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThe ban hammer has spoken!\n&#ff6e6eThe ban hammer: " + sender.getName()) + "&#ff6e6e\n\nExpires: &#ff7f6e" + cal.getTime(), cal.getTime(), sender.getName());
+                target.kickPlayer(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou have been temporarily banned from the server"));
+                break;
 
             default:
                 return true;
