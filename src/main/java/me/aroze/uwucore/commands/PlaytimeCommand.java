@@ -1,6 +1,7 @@
 package me.aroze.uwucore.commands;
 
 import me.aroze.uwucore.util.ChatUtils;
+import me.aroze.uwucore.util.MathUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Statistic;
 import org.bukkit.command.Command;
@@ -33,7 +34,8 @@ public class PlaytimeCommand implements CommandExecutor {
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + seconds + " &#678580seconds"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(minutes * 100))/100 + " &#678580minutes"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(hours * 100))/100 + " &#678580hours"));
-        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(days * 100))/100 + " &#678580days"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(days * 100))/100 + " &#678580days\n\n"));
+        sender.sendMessage("&#947c9cFor non-nerds: &#cda2db " + MathUtils.ticksToTimestamp(Long.parseLong("" + ticks)));
         sender.sendMessage("\n");
         return true;
 
