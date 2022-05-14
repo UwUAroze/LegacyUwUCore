@@ -15,7 +15,7 @@ public class PlaytimeCommand implements CommandExecutor {
         String player = sender.getName();
 
         int ticks = ((Player) sender).getStatistic(Statistic.PLAY_ONE_MINUTE);
-        sender.sendMessage(ChatUtils.color("\n&#947c9cPlaytime of &#cda2db" + player + "&#947c9cin different units:"));
+        sender.sendMessage(ChatUtils.color("\n&#947c9cPlaytime of &#cda2db" + player + "&#947c9c in different units:"));
         sender.sendMessage(ChatUtils.color("&#93c9c1" + ticks + " &#678580ticks"));
         sender.sendMessage("\n");
         return true;
