@@ -17,3 +17,5 @@ commands:
     aliases: [ kittycannon, kittyshooter, catgun, catcannon, catshooter, kittengun, kittencannon, kittenshooter ]
   vanish:
     aliases: [ v, sv, van ]
+  punish:
+    aliases: [ ban, kick, tempban ]
