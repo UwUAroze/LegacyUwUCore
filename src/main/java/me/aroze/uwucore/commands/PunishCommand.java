@@ -1,10 +1,14 @@
 package me.aroze.uwucore.commands;
 
 import me.aroze.uwucore.util.ChatUtils;
+import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.Calendar;
 
 public class PunishCommand implements CommandExecutor {
     @Override
@@ -25,8 +29,19 @@ public class PunishCommand implements CommandExecutor {
             return true;
         }
 
-        if (args[1].equalsIgnoreCase("ban")) {
+        Player target = (Player) Bukkit.getOfflinePlayer(args[0]);
 
+        switch(args[1].toLowerCase()) {
+            case "kick":
+                target.kickPlayer(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou have been kicked from the server"));
+                break;
+            case "ban":
+                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThe ban hammer has spoken!\n\n&#ff6e6eThe ban hammer: " + sender.getName()), null, sender.getName());
+                break;
+            case "tempban":
+
+            default:
+                return true;
         }
 
         return true;
