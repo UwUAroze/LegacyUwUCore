@@ -32,6 +32,7 @@ public final class UwUCore extends JavaPlugin {
         getCommand("kittygun").setExecutor(new KittyGunCommand());
         getCommand("vanish").setExecutor(new VanishCommand());
         getCommand("punish").setExecutor(new PunishCommand());
+        getCommand("playtime").setExecutor(new PlaytimeCommand());
 
         getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new Knockback(), this);

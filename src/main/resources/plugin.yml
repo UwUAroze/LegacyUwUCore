@@ -19,3 +19,5 @@ commands:
     aliases: [ v, sv, van ]
   punish:
     aliases: [ ban, kick, tempban ]
+  playtime:
+    aliases: [ pt ]
