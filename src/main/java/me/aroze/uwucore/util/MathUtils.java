@@ -2,7 +2,7 @@ package me.aroze.uwucore.util;
 
 public class MathUtils {
 
-    public static String ticksToTimestamp(long ticks) {
+    public static String ticksToTimestamp(int ticks) {
         double seconds = ticks / 20;
         double minutes = seconds / 60;
         double hours = minutes / 60;
