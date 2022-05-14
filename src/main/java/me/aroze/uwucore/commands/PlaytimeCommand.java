@@ -15,7 +15,7 @@ public class PlaytimeCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return true;
         String player = sender.getName();
 
-        if (args[1] != null) player = args[1];
+        if (args.length != 0) player = args[0];
 
         if (!(Bukkit.getOfflinePlayer(player).hasPlayedBefore())) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThat user has never played here before!"));
@@ -23,7 +23,7 @@ public class PlaytimeCommand implements CommandExecutor {
         }
 
 
-        int ticks = ((Player) sender).getStatistic(Statistic.PLAY_ONE_MINUTE);
+        int ticks = (Bukkit.getOfflinePlayer(player)).getStatistic(Statistic.PLAY_ONE_MINUTE);
         sender.sendMessage(ChatUtils.color("\n&#947c9cPlaytime of &#cda2db" + player + "&#947c9c in different units:"));
         sender.sendMessage(ChatUtils.color("&#93c9c1" + ticks + " &#678580ticks"));
         sender.sendMessage("\n");
