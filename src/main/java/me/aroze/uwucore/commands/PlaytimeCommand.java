@@ -23,14 +23,14 @@ public class PlaytimeCommand implements CommandExecutor {
         }
 
 
-        int ticks = (Bukkit.getOfflinePlayer(player)).getStatistic(Statistic.PLAY_ONE_MINUTE);
+        double ticks = (Bukkit.getOfflinePlayer(player)).getStatistic(Statistic.PLAY_ONE_MINUTE);
         double seconds = ticks / 20;
         double minutes = seconds / 60;
         double hours = minutes / 60;
         double days = hours / 24;
         sender.sendMessage(ChatUtils.color("\n&#947c9cPlaytime of &#cda2db" + player + "&#947c9c in different units:"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + ticks + " &#678580ticks"));
-        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(seconds * 100))/100 + " &#678580seconds"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + seconds + " &#678580seconds"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(minutes * 100))/100 + " &#678580minutes"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(hours * 100))/100 + " &#678580hours"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(days * 100))/100 + " &#678580days"));
