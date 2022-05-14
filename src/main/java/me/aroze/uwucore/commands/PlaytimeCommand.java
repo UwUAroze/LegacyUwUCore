@@ -24,8 +24,16 @@ public class PlaytimeCommand implements CommandExecutor {
 
 
         int ticks = (Bukkit.getOfflinePlayer(player)).getStatistic(Statistic.PLAY_ONE_MINUTE);
+        int seconds = ticks / 20;
+        int minutes = seconds / 60;
+        int hours = minutes / 60;
+        int days = hours / 24;
         sender.sendMessage(ChatUtils.color("\n&#947c9cPlaytime of &#cda2db" + player + "&#947c9c in different units:"));
-        sender.sendMessage(ChatUtils.color("&#93c9c1" + ticks + " &#678580ticks"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + ticks + " &#678580ticks"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + seconds + " &#678580seconds"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + minutes + " &#678580minutes"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + hours + " &#678580hours"));
+        sender.sendMessage(ChatUtils.color("&#93c9c1 • " + days + " &#678580days"));
         sender.sendMessage("\n");
         return true;
     }
