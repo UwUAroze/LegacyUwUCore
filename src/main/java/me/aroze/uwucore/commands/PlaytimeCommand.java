@@ -36,7 +36,7 @@ public class PlaytimeCommand implements CommandExecutor {
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(minutes * 100))/100 + " &#678580minutes"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(hours * 100))/100 + " &#678580hours"));
         sender.sendMessage(ChatUtils.color("&#93c9c1 • " + Double.parseDouble("" + Math.round(days * 100))/100 + " &#678580days\n\n"));
-        sender.sendMessage(ChatUtils.color("&#947c9cFor non-nerds: &#cda2db " + MathUtils.ticksToTimestamp(ticks)));
+        sender.sendMessage(ChatUtils.color("\n&#947c9cFor non-nerds: &#cda2db " + MathUtils.ticksToTimestamp(ticks)));
         sender.sendMessage("\n");
         return true;
 
