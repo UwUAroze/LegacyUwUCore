@@ -180,6 +180,7 @@ public class TestCommand implements CommandExecutor {
 
             book.setItemMeta(bookMeta);
             ((Player) sender).getInventory().addItem(book);
+            return true;
         }
 
         return true;
