@@ -184,7 +184,10 @@ public class TestCommand implements CommandExecutor {
         }
 
         if (args[0].equals("playtime")) {
-            sender.sendMessage(String.valueOf(((Player) sender).getStatistic(Statistic.PLAY_ONE_MINUTE)));
+            int ticks = ((Player) sender).getStatistic(Statistic.PLAY_ONE_MINUTE);
+            sender.sendMessage(ChatUtils.color("\n&#&947c9cYour Playtime:"));
+            sender.sendMessage(ChatUtils.color("&#93c9c1" + ticks + " &#678580ticks"));
+            sender.sendMessage("\n");
         }
 
         return true;
