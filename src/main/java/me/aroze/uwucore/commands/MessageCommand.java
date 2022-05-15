@@ -14,7 +14,7 @@ public class MessageCommand implements CommandExecutor {
 
         if (!(sender instanceof Player)) return true;
 
-        if (args.length != 2) {
+        if (args.length < 2) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eUsage: /msg <player> <message>"));
             return true;
         }
@@ -25,7 +25,7 @@ public class MessageCommand implements CommandExecutor {
         }
 
         Player target = Bukkit.getPlayer(args[0]);
-        String message = ChatUtils.color(args[1]);
+        String message = ChatUtils.color(String.join(" ", args).replaceFirst(args[0], ""));
 
         sender.sendMessage(ChatUtils.color("&#9f87d6To: &#b4a2db" + target.getName() + " " + "&#ccbbf0" + message));
         target.sendMessage(ChatUtils.color("&#9f87d6From: &#b4a2db" + sender.getName() + " " + "&#ccbbf0" + message));
