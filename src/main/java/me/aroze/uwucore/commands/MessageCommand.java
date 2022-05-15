@@ -27,8 +27,8 @@ public class MessageCommand implements CommandExecutor {
         Player target = Bukkit.getPlayer(args[0]);
         String message = ChatUtils.color(String.join(" ", args).replaceFirst(args[0], ""));
 
-        sender.sendMessage(ChatUtils.color("&#9f87d6To: &#b4a2db" + target.getName() + " " + "&#ccbbf0" + message));
-        target.sendMessage(ChatUtils.color("&#9f87d6From: &#b4a2db" + sender.getName() + " " + "&#ccbbf0" + message));
+        sender.sendMessage(ChatUtils.color("&#9f87d6To: &#b4a2db" + target.getName() + "&#ccbbf0" + message));
+        target.sendMessage(ChatUtils.color("&#9f87d6From: &#b4a2db" + sender.getName() + "&#ccbbf0" + message));
 
 
         return true;
