@@ -9,8 +9,13 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.HashMap;
+import java.util.UUID;
+
 public final class UwUCore extends JavaPlugin {
 
+    public static HashMap<UUID, UUID> recentMessager = new HashMap<>();
     public static ProtocolManager protocolManager;
     public static ItemStack kittyGun = new ItemStack(Material.END_ROD);
 

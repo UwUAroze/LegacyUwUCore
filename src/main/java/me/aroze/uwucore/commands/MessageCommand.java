@@ -1,5 +1,6 @@
 package me.aroze.uwucore.commands;
 
+import me.aroze.uwucore.UwUCore;
 import me.aroze.uwucore.listeners.Chat;
 import me.aroze.uwucore.util.ChatUtils;
 import org.bukkit.Bukkit;
@@ -29,6 +30,8 @@ public class MessageCommand implements CommandExecutor {
 
         sender.sendMessage(ChatUtils.color("&#b4a2db[&#ccbbf0To " + target.getName() + "&#b4a2db]&#eb94af" + message));
         target.sendMessage(ChatUtils.color("&#b4a2db[&#ccbbf0From " + sender.getName() + "&#b4a2db]&#eb94af" + message));
+
+        UwUCore.recentMessager.put(target.getUniqueId(), ((Player) sender).getUniqueId());
 
 
         return true;
