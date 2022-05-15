@@ -19,7 +19,7 @@ public class MessageCommand implements CommandExecutor {
             return true;
         }
 
-        if (!(Bukkit.getOnlinePlayers().contains(args[0]))) {
+        if (!(Bukkit.getOfflinePlayer(args[0]).isOnline())) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThere is no online player matching '" + args[0] + "'"));
             return true;
         }
