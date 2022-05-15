@@ -201,13 +201,11 @@ public class TestCommand implements CommandExecutor {
 
         if (args[0].equals("delay")) {
 
-            for (int i = 0; i < 10; i++) {
-
+            for (int i = 0; i <= 10; i++) {
                 int finalI = i;
                 Bukkit.getScheduler().runTaskLater(UwUCore.getInstance(), () -> {
                     sender.sendMessage(ChatUtils.color("&a" + finalI));
-                }, 10);
-
+                }, 10 * finalI);
             }
 
         }
