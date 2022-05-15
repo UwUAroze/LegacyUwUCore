@@ -21,6 +21,7 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -183,7 +184,20 @@ public class TestCommand implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equals("stress")) {
+
+            ArrayList<Double> lol = new ArrayList<>();
+
+            for (int i = 0; i < Integer.parseInt(args[1]); i++) {
+                lol.add(Math.random());
+            }
+            sender.sendMessage("&a" + lol.size() + " random numbers generated");
+
+            return true;
+
+        }
+
         return true;
     }
 
-}
+}}
