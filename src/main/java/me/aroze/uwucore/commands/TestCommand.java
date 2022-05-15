@@ -193,7 +193,7 @@ public class TestCommand implements CommandExecutor {
             for (int i = 0; i < Integer.parseInt(args[1]); i++) {
                 lol.add(Math.random());
             }
-            sender.sendMessage("&a" + lol.size() + " random numbers generated");
+            sender.sendMessage(ChatUtils.color("&a" + lol.size() + " random numbers generated"));
 
             return true;
 
