@@ -23,5 +23,5 @@ commands:
     aliases: [ pt ]
   reply:
     aliases: [ r ]
-  message:
-    aliases: [ msg, m ]
+  msg:
+    aliases: [ message, m ]

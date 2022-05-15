@@ -35,7 +35,7 @@ public final class UwUCore extends JavaPlugin {
         getCommand("vanish").setExecutor(new VanishCommand());
         getCommand("punish").setExecutor(new PunishCommand());
         getCommand("playtime").setExecutor(new PlaytimeCommand());
-        getCommand("message").setExecutor(new MessageCommand());
+        getCommand("msg").setExecutor(new MessageCommand());
         getCommand("reply").setExecutor(new ReplyCommand());
 
         getServer().getPluginManager().registerEvents(new Chat(), this);
