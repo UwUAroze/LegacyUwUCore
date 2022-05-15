@@ -21,5 +21,7 @@ commands:
     aliases: [ ban, kick, tempban ]
   playtime:
     aliases: [ pt ]
-  reply: {}
-  message: {}
+  reply:
+    aliases: [ r ]
+  message:
+    aliases: [ msg, m ]
