@@ -27,8 +27,8 @@ public class ReplyCommand implements CommandExecutor {
         Player target = Bukkit.getPlayer(UwUCore.recentMessager.get(((Player) sender).getUniqueId()));
         String message = ChatUtils.color(String.join(" ", args));
 
-        sender.sendMessage(ChatUtils.color("&#b4a2db[&#ccbbf0To " + target.getName() + "&#b4a2db]&#eb94af" + message));
-        target.sendMessage(ChatUtils.color("&#b4a2db[&#ccbbf0From " + sender.getName() + "&#b4a2db]&#eb94af" + message));
+        sender.sendMessage(ChatUtils.color("&#b4a2db[&#ccbbf0To " + target.getName() + "&#b4a2db] &#eb94af" + message));
+        target.sendMessage(ChatUtils.color("&#b4a2db[&#ccbbf0From " + sender.getName() + "&#b4a2db] &#eb94af" + message));
 
         return true;
     }
