@@ -21,3 +21,5 @@ commands:
     aliases: [ ban, kick, tempban ]
   playtime:
     aliases: [ pt ]
+  reply: {}
+  message: {}
