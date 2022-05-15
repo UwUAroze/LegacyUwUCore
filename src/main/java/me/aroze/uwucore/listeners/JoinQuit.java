@@ -1,5 +1,6 @@
 package me.aroze.uwucore.listeners;
 
+import me.aroze.uwucore.UwUCore;
 import me.aroze.uwucore.util.ChatUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -41,6 +42,7 @@ public class JoinQuit implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
         e.setQuitMessage(ChatUtils.color("&#ffb5cf[&d-&#ffb5cf] " + e.getPlayer().getName()));
+        UwUCore.recentMessager.remove(e.getPlayer().getUniqueId());
     }
 
 }
