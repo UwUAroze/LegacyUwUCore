@@ -215,13 +215,17 @@ public class TestCommand implements CommandExecutor {
         if (args[0].equals("repeat")) {
 
             if (args.length > 1) {
-                if (args[1].equals("stop")) task.cancel();
+                if (args[1].equals("stop")) {
+                    task.cancel();
+                    sender.sendMessage(ChatUtils.color("&cStopped repeating task"));
+                    return true;
+                }
             }
 
             AtomicInteger i = new AtomicInteger();
             task = Bukkit.getScheduler().runTaskTimer(UwUCore.getInstance(), () -> {
                 i.addAndGet(1);
-                sender.sendMessage(ChatUtils.color("&aThis sends every second. It's been &2" + i.get() + "&2 seconds &a(/test repeat stop)"));
+                sender.sendMessage(ChatUtils.color("&aIt's been &c" + i.get() + " &cseconds &a(/test repeat stop)"));
             } , 0, 20);
         }
 
