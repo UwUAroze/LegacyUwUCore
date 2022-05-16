@@ -23,6 +23,7 @@ import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestCommand implements CommandExecutor {
     float yaw;
     float pitch;
+
+    BukkitTask task;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -210,11 +213,16 @@ public class TestCommand implements CommandExecutor {
         }
 
         if (args[0].equals("repeat")) {
+
+            if (args.length > 1) {
+                if (args[1].equals("stop")) task.cancel();
+            }
+
             AtomicInteger i = new AtomicInteger();
-            Bukkit.getScheduler().runTaskTimer(UwUCore.getInstance(), () -> {
+            task = Bukkit.getScheduler().runTaskTimer(UwUCore.getInstance(), () -> {
                 i.addAndGet(1);
-                sender.sendMessage(ChatUtils.color("&aThis sends every 0.25 seconds. It's been " + i.get()*0.25 + "&a seconds"));
-            } , 5, 5);
+                sender.sendMessage(ChatUtils.color("&aThis sends every second. It's been &2" + i.get() + "&2 seconds &a(/test repeat stop)"));
+            } , 0, 20);
         }
 
         return true;
