@@ -209,6 +209,14 @@ public class TestCommand implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equals("repeat")) {
+            AtomicInteger i = new AtomicInteger();
+            Bukkit.getScheduler().runTaskTimer(UwUCore.getInstance(), () -> {
+                i.addAndGet(1);
+                sender.sendMessage(ChatUtils.color("&aThis sends every 0.25 seconds. It's been " + i.get()*0.25 + "&a seconds"));
+            } , 5, 5);
+        }
+
         return true;
     }
 
