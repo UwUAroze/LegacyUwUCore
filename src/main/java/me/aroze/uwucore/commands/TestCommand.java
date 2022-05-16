@@ -237,12 +237,12 @@ public class TestCommand implements CommandExecutor {
             ItemStack wool = new ItemStack(Material.PINK_WOOL, 14);
             ItemMeta woolMeta = wool.getItemMeta();
             woolMeta.setDisplayName(ChatUtils.color("&#a0d9bchohly shiuyt its wool!"));
-            woolMeta.setLore(Arrays.asList("\n", "&#c2a378woah this is gold", "&#9ae3abwOAH THIS IS GREEN!"));
+            woolMeta.setLore(Arrays.asList("\n", ChatUtils.color("&#c2a378woah this is gold"), ChatUtils.color("&#9ae3abwOAH THIS IS GREEN!")));
             wool.setItemMeta(woolMeta);
 
             ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
             BookMeta bookMeta = (BookMeta) book.getItemMeta();
-            bookMeta.setDisplayName(ChatUtils.color("&#a0d9bchohly shiuyt its book!"));
+            bookMeta.setDisplayName(ChatUtils.color(ChatUtils.color("&#a0d9bchohly shiuyt its book!")));
             bookMeta.setLore(Arrays.asList("i cannot be asked."));
             book.setItemMeta(bookMeta);
 
