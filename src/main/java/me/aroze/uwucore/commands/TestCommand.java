@@ -17,10 +17,12 @@ import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BannerMeta;
 import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitTask;
@@ -227,6 +229,28 @@ public class TestCommand implements CommandExecutor {
                 i.addAndGet(1);
                 sender.sendMessage(ChatUtils.color("&aIt's been &c" + i.get() + " &cseconds &a(/test repeat stop)"));
             } , 0, 20);
+        }
+
+        if (args[0].equals("gui")) {
+            Inventory inv = Bukkit.createInventory((Player) sender, 9, ChatUtils.gradient(255,255,255,255,0,255,"Super cool super epic test gui!"));
+
+            ItemStack wool = new ItemStack(Material.PINK_WOOL, 14);
+            ItemMeta woolMeta = wool.getItemMeta();
+            woolMeta.setDisplayName(ChatUtils.color("&#a0d9bchohly shiuyt its wool!"));
+            woolMeta.setLore(Arrays.asList("\n", "&#c2a378woah this is gold", "&#9ae3abwOAH THIS IS GREEN!"));
+            wool.setItemMeta(woolMeta);
+
+            ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
+            BookMeta bookMeta = (BookMeta) book.getItemMeta();
+            bookMeta.setDisplayName(ChatUtils.color("&#a0d9bchohly shiuyt its book!"));
+            bookMeta.setLore(Arrays.asList("i cannot be asked."));
+            book.setItemMeta(bookMeta);
+
+            inv.setItem(3, wool);
+            inv.setItem(5, book);
+
+
+            ((Player) sender).openInventory(inv);
         }
 
         return true;
