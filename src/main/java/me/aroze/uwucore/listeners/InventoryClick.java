@@ -1,4 +1,9 @@
 package me.aroze.uwucore.listeners;
 
-public class InventoryClick {
+import org.bukkit.event.Listener;
+
+public class InventoryClick implements Listener {
+
+
+
 }
