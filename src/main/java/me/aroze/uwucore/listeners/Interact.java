@@ -1,10 +1,6 @@
 package me.aroze.uwucore.listeners;
 
 import me.aroze.uwucore.UwUCore;
-import me.aroze.uwucore.util.ChatUtils;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Cat;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
@@ -26,7 +22,7 @@ public class Interact implements Listener {
         String kittyGun = UwUCore.kittyGun.getItemMeta().getDisplayName();
 
         if (heldItem.equals(kittyGun)) {
-            Cat cat = (Cat) Bukkit.getWorld("flat").spawnEntity(e.getPlayer().getEyeLocation(), EntityType.CAT);
+            Cat cat = (Cat) e.getPlayer().getWorld().spawnEntity(e.getPlayer().getEyeLocation(), EntityType.CAT);
             cat.setVelocity((e.getPlayer().getEyeLocation().getDirection()).multiply(2.5));
         }
 
