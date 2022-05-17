@@ -43,6 +43,7 @@ public final class UwUCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinQuit(), this);
         getServer().getPluginManager().registerEvents(new Interact(), this);
         getServer().getPluginManager().registerEvents(new ServerListPing(), this);
+        getServer().getPluginManager().registerEvents(new InventoryClick(), this);
 
         ItemMeta kittyGunMeta = kittyGun.getItemMeta();
         kittyGunMeta.setDisplayName(ChatUtils.color("&#b9ffb3Kitty Gun"));
