@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestCommand implements CommandExecutor {
+
+    public static Inventory inv;
     float yaw;
     float pitch;
 
@@ -232,7 +234,7 @@ public class TestCommand implements CommandExecutor {
         }
 
         if (args[0].equals("gui")) {
-            Inventory inv = Bukkit.createInventory((Player) sender, 9, ChatUtils.gradient(255,255,255,255,0,255,"Super cool super epic test gui!"));
+            inv = Bukkit.createInventory((Player) sender, 9, ChatUtils.gradient(255,255,255,255,0,255,"Super cool super epic test gui!"));
 
             ItemStack wool = new ItemStack(Material.PINK_WOOL, 14);
             ItemMeta woolMeta = wool.getItemMeta();
@@ -243,7 +245,6 @@ public class TestCommand implements CommandExecutor {
             ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
             BookMeta bookMeta = (BookMeta) book.getItemMeta();
             bookMeta.setDisplayName(ChatUtils.color(ChatUtils.color("&#a0d9bchohly shiuyt its book!")));
-            bookMeta.setLore(Arrays.asList("i cannot be asked."));
             book.setItemMeta(bookMeta);
 
             inv.setItem(3, wool);
