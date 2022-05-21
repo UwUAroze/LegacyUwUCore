@@ -50,15 +50,19 @@ public class ColouredArmorCommand implements CommandExecutor {
                 providedHex = true;
                 color = Color.fromRGB(r, g, b);
             } else {
-                if (args.length > 3) {
-                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou only need 3 arguments for rgb, or one for hex!"));
-                    return true;
-                } if (args.length < 3) {
-                    sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need 3 arguments for rgb, or just one for hex!"));
-                    return true;
-                }
+                sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need to provide hex or rgb values!"));
+                return true;
             }
 
+        } else {
+            if (args.length > 3) {
+                sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou've overloaded the system with too many args o.o"));
+                return true;
+            }
+            if (args.length == 2) {
+                sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou provided 2 arguments..? RGB requires 3, and hex needs only 1!"));
+                return true;
+            }
         }
 
         try {
