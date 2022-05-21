@@ -14,6 +14,11 @@ public class PunishCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if (!(sender.hasPermission("uwucore.punish"))) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
+            return true;
+        }
+
         if (!(args.length == 2)) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eSyntax: /punish <player> <kick/ban/tempban>"));
             return true;
