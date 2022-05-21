@@ -33,16 +33,15 @@ public class VanishCommand implements CommandExecutor {
                 p.showPlayer(UwUCore.getInstance(), player);
             }
             player.sendMessage(ChatUtils.color("&#7f6d85You are now &#a3ff99visible &#7f6d85to everyone!"));
+            return true;
         }
 
-        else {
-            vanished.add(player.getUniqueId());
-            for (Player p : Bukkit.getOnlinePlayers()) {
-                p.hidePlayer(UwUCore.getInstance(), player);
-            }
-            player.sendMessage(ChatUtils.color("&#7f6d85You are now &#ff9999vanished &#7f6d85from everyone!"));
+        vanished.add(player.getUniqueId());
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            p.hidePlayer(UwUCore.getInstance(), player);
         }
+        player.sendMessage(ChatUtils.color("&#7f6d85You are now &#ff9999vanished &#7f6d85from everyone!"));
 
-        return false;
+        return true;
     }
 }
