@@ -22,6 +22,11 @@ public class VanishCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
 
+        if (!(sender.hasPermission("uwucore.vanish"))) {
+            sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
+            return true;
+        }
+
         if (vanished.contains(player.getUniqueId())) {
             vanished.remove(player.getUniqueId());
             for (Player p : Bukkit.getOnlinePlayers()) {
