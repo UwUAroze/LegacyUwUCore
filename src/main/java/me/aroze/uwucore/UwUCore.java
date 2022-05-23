@@ -38,6 +38,8 @@ public final class UwUCore extends JavaPlugin {
         getCommand("msg").setExecutor(new MessageCommand());
         getCommand("reply").setExecutor(new ReplyCommand());
 
+        getCommand("test").setTabCompleter(new TestTabComplete());
+
         getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new Knockback(), this);
         getServer().getPluginManager().registerEvents(new JoinQuit(), this);
