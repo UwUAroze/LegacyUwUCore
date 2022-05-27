@@ -5,9 +5,6 @@ import me.aroze.uwucore.util.ChatUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.boss.BarColor;
-import org.bukkit.boss.BarStyle;
-import org.bukkit.boss.BossBar;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -28,12 +25,12 @@ public class JoinQuit implements Listener {
         e.getPlayer().setPlayerListHeaderFooter(
                 ChatUtils.color("&#eb9bb7▶&8&m                                                  &#eb9bb7◀\n" +
                         "\n" +
-                        "&#ffb5cfWelcome to &#9c89c7Server name\n" +
+                        "&#ffb5cfWelcome to &#9c89c7" + UwUCore.getInstance().getConfig().getString("tab.serverName") + "\n" +
                         "&#ffb5cfThere are &#ffe6ef" + Bukkit.getOnlinePlayers().size() + " &#ffb5cfonline players!\n"),
 
                 ChatUtils.color("\n" +
-                        "&#eb9bb7Discord &8&l| &#ffb5cfdiscord.gg/abcd\n" +
-                        "&#a16a7dWebstore &8&l| &#ffb5cfummmmmm\n" +
+                        "&#eb9bb7Discord &8&l| &#ffb5cf" + UwUCore.getInstance().getConfig().getString("tab.discordLink") + "\n" +
+                        "&#a16a7dWebstore &8&l| &#ffb5cf" + UwUCore.getInstance().getConfig().getString("tab.webstoreLink") + "\n" +
                         "\n" +
                         "&#eb9bb7▶&8&m                                                  &#eb9bb7◀")
         );
