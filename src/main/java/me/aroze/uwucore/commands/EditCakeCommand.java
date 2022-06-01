@@ -22,7 +22,7 @@ public class EditCakeCommand implements CommandExecutor {
 
         Block cakeBlock = player.getTargetBlockExact(6);
 
-        if (cakeBlock.getType().isAir()) {
+        if (cakeBlock == null) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou're staring at air smh."));
             return true;
         }
