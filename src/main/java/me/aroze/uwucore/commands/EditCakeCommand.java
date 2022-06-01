@@ -32,6 +32,11 @@ public class EditCakeCommand implements CommandExecutor {
             return true;
         }
 
+        if (args.length != 1) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6ePsst! /editcake <0-6>"));
+            return true;
+        }
+
         return true;
     }
 }
