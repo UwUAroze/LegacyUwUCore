@@ -23,6 +23,11 @@ public class HatCommand implements CommandExecutor {
         ItemStack playerTool = new ItemStack(player.getInventory().getItemInMainHand());
         int itemSlot = player.getInventory().getHeldItemSlot();
 
+        if (playerTool.getType().equals(Material.AIR)) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eWe don't want to overdose you on oxygen!"));
+            return true;
+        }
+
         player.getInventory().setItem(itemSlot, new ItemStack(Material.AIR));
         player.getInventory().setHelmet(playerTool);
 
