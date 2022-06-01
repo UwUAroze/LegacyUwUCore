@@ -68,7 +68,7 @@ public class SetBitesCommand implements CommandExecutor {
 
         targetBlock.setBlockData(cakeData);
 
-        sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Set cake bites! (" + previousBites + "->" + bites + ")"));
+        sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Set cake bites! (" + previousBites + " » " + bites + ")"));
 
         return true;
     }
