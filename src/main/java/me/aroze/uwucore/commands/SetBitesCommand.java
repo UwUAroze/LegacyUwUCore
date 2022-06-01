@@ -35,7 +35,7 @@ public class SetBitesCommand implements CommandExecutor {
         }
 
         if (args.length != 1) {
-            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6ePsst! /editcake <0-6>"));
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6ePsst! /setbites <0-6>"));
             return true;
         }
 
