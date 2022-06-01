@@ -47,13 +47,21 @@ public class SetBitesCommand implements CommandExecutor {
 
         if (bites < 0) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eTh-That's not how this works.."));
+            return true;
         }
 
         Cake cakeData = (Cake) targetBlock.getBlockData();
+        int previousBites = cakeData.getBites();
         cakeData.setBites(bites);
+
+        if (cakeData.getBites() == bites) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eMaybe you can't count, but this cake already has " + cakeData.getBites() + " bites!"));
+            return true;
+        }
+
         targetBlock.setBlockData(cakeData);
 
-        sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Set cake bites to: " + bites));
+        sender.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Set cake bites! (" + previousBites + "->" + bites + ")"));
 
         return true;
     }
