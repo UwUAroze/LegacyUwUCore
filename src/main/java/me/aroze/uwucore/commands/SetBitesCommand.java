@@ -3,6 +3,7 @@ package me.aroze.uwucore.commands;
 import me.aroze.uwucore.util.ChatUtils;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.type.Cake;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -36,6 +37,8 @@ public class SetBitesCommand implements CommandExecutor {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6ePsst! /editcake <0-6>"));
             return true;
         }
+
+        Cake cake = (Cake) targetBlock.getBlockData();
 
         return true;
     }
