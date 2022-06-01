@@ -25,4 +25,5 @@ commands:
     aliases: [ r ]
   msg:
     aliases: [ message, m ]
-  setbites: {}
+  setbites:
+    aliases: [ setcakebites ]
