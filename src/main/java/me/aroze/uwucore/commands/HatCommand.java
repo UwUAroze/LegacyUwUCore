@@ -21,8 +21,9 @@ public class HatCommand implements CommandExecutor {
         }
 
         ItemStack playerTool = new ItemStack(player.getInventory().getItemInMainHand());
+        int itemSlot = player.getInventory().getHeldItemSlot();
 
-        player.getInventory().getItemInMainHand().setType(Material.AIR);
+        player.getInventory().setItem(itemSlot, new ItemStack(Material.AIR));
         player.getInventory().setHelmet(playerTool);
 
         player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Woo, your head is now way cooler :flushed: :eyes:"));
