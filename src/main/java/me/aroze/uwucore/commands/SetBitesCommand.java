@@ -46,6 +46,10 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
+        if (bites < 0) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eTh-That's not how this works.."));
+        }
+
         Cake cake = (Cake) targetBlock.getBlockData();
         Bukkit.broadcastMessage(cake.getBites() + " " + cake.getMaximumBites());
 
