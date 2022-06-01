@@ -15,7 +15,7 @@ public class EditCakeCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
 
-        if (!player.hasPermission("uwucore.editcake")) {
+        if (!player.hasPermission("uwucore.setbites")) {
             sender.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou aren't allowed to do this! smh!"));
             return true;
         }
