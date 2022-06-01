@@ -58,12 +58,13 @@ public class SetBitesCommand implements CommandExecutor {
 
         Cake cakeData = (Cake) targetBlock.getBlockData();
         int previousBites = cakeData.getBites();
-        cakeData.setBites(bites);
 
-        if (cakeData.getBites() == bites) {
+        if (previousBites == bites) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eMaybe you can't count, but this cake already has " + cakeData.getBites() + " bites!"));
             return true;
         }
+
+        cakeData.setBites(bites);
 
         targetBlock.setBlockData(cakeData);
 
