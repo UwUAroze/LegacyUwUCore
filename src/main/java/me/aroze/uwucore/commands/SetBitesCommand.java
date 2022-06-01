@@ -39,6 +39,13 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
+        int bites = Integer.parseInt(args[0]);
+
+        if (bites > 6) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThe cake can only have 6 slices taken out, fatty!"));
+            return true;
+        }
+
         Cake cake = (Cake) targetBlock.getBlockData();
         Bukkit.broadcastMessage(cake.getBites() + " " + cake.getMaximumBites());
 
