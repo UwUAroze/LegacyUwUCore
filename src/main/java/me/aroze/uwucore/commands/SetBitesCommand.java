@@ -20,14 +20,14 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
-        Block cakeBlock = player.getTargetBlockExact(6);
+        Block targetBlock = player.getTargetBlockExact(6);
 
-        if (cakeBlock == null) {
+        if (targetBlock == null) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou're staring at air smh."));
             return true;
         }
 
-        if (!(cakeBlock.getType().equals(Material.CAKE))) {
+        if (!(targetBlock.getType().equals(Material.CAKE))) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need to be looking at a cake, dummy!"));
             return true;
         }
