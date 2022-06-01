@@ -27,3 +27,4 @@ commands:
     aliases: [ message, m ]
   setbites:
     aliases: [ setcakebites ]
+  hat: {}
