@@ -1,6 +1,7 @@
 package me.aroze.uwucore.commands;
 
 import me.aroze.uwucore.util.ChatUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.type.Cake;
@@ -39,6 +40,7 @@ public class SetBitesCommand implements CommandExecutor {
         }
 
         Cake cake = (Cake) targetBlock.getBlockData();
+        Bukkit.broadcastMessage(cake.getBites() + " " + cake.getMaximumBites());
 
         return true;
     }
