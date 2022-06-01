@@ -38,7 +38,13 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
-        int bites = Integer.parseInt(args[0]);
+        int bites;
+
+        try { bites = Integer.parseInt(args[0]); }
+        catch (NumberFormatException e) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThat's not a number!"));
+            return true;
+        }
 
         if (bites > 6) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eThe cake can only have 6 slices taken out, fatty!"));
