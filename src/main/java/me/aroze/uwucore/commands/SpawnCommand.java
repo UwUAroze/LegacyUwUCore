@@ -17,6 +17,7 @@ public class SpawnCommand implements CommandExecutor {
         Location spawnLoc = player.getWorld().getSpawnLocation(); // for now just gets world spawn, /setspawn soon:tm:
         int spawnTimer = 3; //in seconds and should be a config option soon.
 
+        // Instant spawning (if config option for spawn timer is set to 0 (or less))
         if (spawnTimer <= 0) {
             player.teleport(spawnLoc);
             player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3You've been teleported to spawn. woah!"));
