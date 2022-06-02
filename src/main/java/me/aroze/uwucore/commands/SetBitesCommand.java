@@ -21,6 +21,7 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
+
         Block targetBlock = player.getTargetBlockExact(6);
 
         if (targetBlock == null) {
@@ -56,13 +57,19 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
-        if (targetBlock.getType().equals(Material.CANDLE_CAKE)) {
+        Cake cakeData;
+        int previousBites;
+
+        if (targetBlock.getType().toString().contains("CANDLE")) {
             targetBlock.setType(Material.CAKE);
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eUnfortunately, we had to remove the candle ;c"));
+            cakeData = (Cake) targetBlock.getBlockData();
+            previousBites = 6;
+        } else {
+            cakeData = (Cake) targetBlock.getBlockData();
+            previousBites = cakeData.getBites();
         }
 
-        Cake cakeData = (Cake) targetBlock.getBlockData();
-        int previousBites = cakeData.getBites();
 
         if (previousBites == bites) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eMaybe you can't count, but this cake already has " + cakeData.getBites() + " bites!"));
