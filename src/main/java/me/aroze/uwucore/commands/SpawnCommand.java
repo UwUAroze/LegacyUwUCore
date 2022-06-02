@@ -2,6 +2,7 @@ package me.aroze.uwucore.commands;
 
 import me.aroze.uwucore.UwUCore;
 import me.aroze.uwucore.util.ChatUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,7 +18,7 @@ public class SpawnCommand implements CommandExecutor {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
 
-        Location spawnLoc = player.getWorld().getSpawnLocation(); // for now just gets world spawn, /setspawn soon:tm:
+        Location spawnLoc = Bukkit.getWorld("Lobby").getSpawnLocation(); // hardcoded for now, /setspawn soon:tm:
         int spawnTimer = 3; //in seconds and should be a config option soon.
 
         // Instant spawning (if config option for spawn timer is set to 0 (or less))
