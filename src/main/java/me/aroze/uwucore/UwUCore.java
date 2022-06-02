@@ -39,6 +39,7 @@ public final class UwUCore extends JavaPlugin {
         getCommand("reply").setExecutor(new ReplyCommand());
         getCommand("setbites").setExecutor(new SetBitesCommand());
         getCommand("hat").setExecutor(new HatCommand());
+        getCommand("spawn").setExecutor(new SpawnCommand());
 
         getCommand("test").setTabCompleter(new TestTabComplete());
 
