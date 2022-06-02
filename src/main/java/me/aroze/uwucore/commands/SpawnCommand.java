@@ -20,6 +20,7 @@ public class SpawnCommand implements CommandExecutor {
         if (spawnTimer <= 0) {
             player.teleport(spawnLoc);
             player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3You've been teleported to spawn. woah!"));
+            return true;
         }
 
         return true;
