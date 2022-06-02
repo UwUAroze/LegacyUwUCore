@@ -2,17 +2,17 @@ tab:
   serverName: "uhh"
   discordLink: "uhm"
   webstoreLink: "hmph"
-
-testWord: 'uwu'
-testNumber: 69
-testBoolean: true
-testStringList:
-  - 'owo'
-  - 'rawr'
-  - 'meow'
-attackSpeed: 4
-noDamageTicks: 10
-Knockback:
-  XZ: 1.0
-  Y: 1.0
-  AirXZ: 1.0
+  
+#testWord: 'uwu'
+#testNumber: 69
+#testBoolean: true
+#testStringList:
+#  - 'owo'
+#  - 'rawr'
+#  - 'meow'
+#attackSpeed: 4
+#noDamageTicks: 10
+#Knockback:
+#  XZ: 1.0
+#  Y: 1.0
+#  AirXZ: 1.0
