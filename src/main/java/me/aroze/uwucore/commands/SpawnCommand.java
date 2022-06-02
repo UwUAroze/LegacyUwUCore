@@ -27,7 +27,7 @@ public class SpawnCommand implements CommandExecutor {
             return true;
         }
 
-        player.sendMessage(ChatUtils.color("&#ffd4e3Try not to move for the next &#eb9bb7" + spawnTimer + " &#ffd4e3or so seconds!"));
+        player.sendMessage(ChatUtils.color("&#ffd4e3Try &#eb9bb7not to move &#ffd4e3for the next " + spawnTimer + " or so seconds!"));
 
 
 
