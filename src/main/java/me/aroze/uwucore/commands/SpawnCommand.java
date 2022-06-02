@@ -46,7 +46,7 @@ public class SpawnCommand implements CommandExecutor {
                     return;
                 }
                 if (player.getLocation().distance(startLoc) > 0.5) {
-                    player.sendMessage(ChatUtils.color("a"));
+                    player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eTeleportation cancelled. You had one job smh."));
                     this.cancel();
                     return;
                 }
