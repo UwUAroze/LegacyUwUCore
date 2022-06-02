@@ -34,7 +34,7 @@ public class SpawnCommand implements CommandExecutor {
         }
 
         if (slashSpawningPlayers.contains(player)) {
-            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou must hate this place, but you can't leave any faster!"));
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou must hate that place, but you can't leave any faster!"));
             return true;
         }
 
