@@ -11,7 +11,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.ArrayList;
+
 public class SpawnCommand implements CommandExecutor {
+
+    public static ArrayList<Player> slashSpawningPlayers = new ArrayList<>();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -28,6 +33,12 @@ public class SpawnCommand implements CommandExecutor {
             return true;
         }
 
+        if (slashSpawningPlayers.contains(player)) {
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eI know you really wanna get out of here, but you're already on your way!"));
+            return true;
+        }
+
+        slashSpawningPlayers.add(player);
         player.sendMessage(ChatUtils.color("&#c49baa&oPsst! Try not to move for the next " + spawnTimer + " or so seconds!"));
 
 
