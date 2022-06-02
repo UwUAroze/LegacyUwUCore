@@ -34,10 +34,25 @@ public class SpawnCommand implements CommandExecutor {
         Location startLoc = player.getLocation();
         AtomicInteger ticks = new AtomicInteger();
 
-        BukkitTask spawnTask = Bukkit.getScheduler().runTaskTimer(UwUCore.getInstance(), () -> {
+        BukkitTask spawnTask = null;
+        BukkitTask finalSpawnTask = spawnTask;
+
+        spawnTask = Bukkit.getScheduler().runTaskTimer(UwUCore.getInstance(), () -> {
             ticks.getAndIncrement();
+
+            if (ticks.get() >= spawnTimer*20)  {
+                player.teleport(spawnLoc);
+                player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3You've been teleported to spawn. woah!"));
+                finalSpawnTask.cancel();
+                return;
+            }
+
+            if (player.getLocation().distance(startLoc) > 0.5) {
+                // player moved too much, need to bully
+            }
         } , 0, 1);
 
         return true;
     }
+
 }
