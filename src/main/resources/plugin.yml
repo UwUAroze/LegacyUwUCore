@@ -28,3 +28,4 @@ commands:
   setbites:
     aliases: [ setcakebites ]
   hat: {}
+  spawn: {}
