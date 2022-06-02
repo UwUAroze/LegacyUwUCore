@@ -23,7 +23,7 @@ public class SpawnCommand implements CommandExecutor {
         // Instant spawning (if config option for spawn timer is set to 0 (or less))
         if (spawnTimer <= 0) {
             player.teleport(spawnLoc);
-            player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3You've been teleported to spawn. woah!"));
+            player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Thine has brung thee to spawn. woah!"));
             return true;
         }
 
