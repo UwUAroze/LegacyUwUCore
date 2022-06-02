@@ -56,6 +56,11 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
+        if (targetBlock.getType().equals(Material.CANDLE_CAKE)) {
+            targetBlock.setType(Material.CAKE);
+            player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eUnfortunately, we had to remove the candle ;c"));
+        }
+
         Cake cakeData = (Cake) targetBlock.getBlockData();
         int previousBites = cakeData.getBites();
 
