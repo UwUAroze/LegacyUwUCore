@@ -2,7 +2,14 @@ tab:
   serverName: "uhh"
   discordLink: "uhm"
   webstoreLink: "hmph"
-  
+
+spawn:
+  # SpawnTimer: How long the player must wait in seconds before /spawn teleports them to spawn
+  # Set to 0 (or below) to disable the timer
+  # Default: 3
+  spawnTimer: 3
+
+
 #testWord: 'uwu'
 #testNumber: 69
 #testBoolean: true
