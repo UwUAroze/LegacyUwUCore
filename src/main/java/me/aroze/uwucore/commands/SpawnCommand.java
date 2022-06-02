@@ -39,9 +39,12 @@ public class SpawnCommand implements CommandExecutor {
         }
 
         slashSpawningPlayers.add(player);
-        player.sendMessage(ChatUtils.color("&#c49baa&oPsst! Try not to move for the next " + spawnTimer + " or so seconds!"));
 
-
+        if (spawnTimer == 1) {
+            player.sendMessage(ChatUtils.color("&#c49baa&oPsst! Try not to move for the next second or so!"));
+        } else {
+            player.sendMessage(ChatUtils.color("&#c49baa&oPsst! Try not to move for the next " + spawnTimer + " or so seconds!"));
+        }
 
         BukkitTask spawnTask = new BukkitRunnable() {
 
