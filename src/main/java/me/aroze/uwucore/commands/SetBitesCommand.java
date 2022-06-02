@@ -28,7 +28,7 @@ public class SetBitesCommand implements CommandExecutor {
             return true;
         }
 
-        if (!(targetBlock.getType().equals(Material.CAKE))) {
+        if (!(targetBlock.getType().equals(Material.CAKE) || !(targetBlock.getType().equals(Material.CANDLE_CAKE)))) {
             player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eYou need to be looking at a cake, dummy!"));
             return true;
         }
