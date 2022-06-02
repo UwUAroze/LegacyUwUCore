@@ -54,12 +54,14 @@ public class SpawnCommand implements CommandExecutor {
                 if (ticks >= spawnTimer*20)  {
                     player.teleport(spawnLoc);
                     player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Thy has brung thee to spawn!"));
+                    slashSpawningPlayers.remove(player);
                     this.cancel();
                     return;
                 }
                 if (player.getLocation().distance(startLoc) > 0.5) {
                     player.sendMessage(ChatUtils.color("&#ff6e6e⚠ &#ff7f6eTeleportation cancelled. You had one job smh."));
                     this.cancel();
+                    slashSpawningPlayers.remove(player);
                     return;
                 }
             }
