@@ -41,7 +41,7 @@ public class SpawnCommand implements CommandExecutor {
                 ticks++;
                 if (ticks >= spawnTimer*20)  {
                     player.teleport(spawnLoc);
-                    player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3You stayed still, good job!!"));
+                    player.sendMessage(ChatUtils.color("&#eb9bb7✔ &#ffd4e3Thine has brung thee to spawn. woah!"));
                     this.cancel();
                     return;
                 }
