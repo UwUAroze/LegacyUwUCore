@@ -24,7 +24,7 @@ public class SpawnCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         Location spawnLoc = Bukkit.getWorld("Lobby").getSpawnLocation(); // hardcoded for now, /setspawn soon:tm:
-        int spawnTimer = UwUCore.getInstance().getConfig().getInt("spawnTimer");
+        int spawnTimer = UwUCore.getInstance().getConfig().getInt("spawn.spawnTimer");
 
         // Instant spawning (if config option for spawn timer is set to 0 (or less))
         if (spawnTimer <= 0) {
