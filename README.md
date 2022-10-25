@@ -1,4 +1,4 @@
-UwUCore!
+# UwUCore!
 
 Primarily made for a server network of mine: Daunted, a little plugin consisting of core featues that are to be on each sub-server.
 
